@@ -1,5 +1,6 @@
 import React from "react";
 import Article from "./Article";
+import HeroSection from "./HeroSection";
 
 import HomepageAbout from "./HomepageAbout";
 
@@ -9,10 +10,11 @@ import News from "./News";
 const Home = () => {
   return (
     <>
+      <HeroSection />
       <NationalPresence />
-      {/* <HomepageAbout />
+      <HomepageAbout />
       <News />
-      <Article /> */}
+      <Article />
     </>
   );
 };

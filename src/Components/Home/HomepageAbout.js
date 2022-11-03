@@ -6,11 +6,11 @@ const HomePageAbout = () => {
   return (
     <>
       <Separator />
-      <section class="homepage-about">
-        <div class="container">
-          <div class="about4">
-            <div class="about4-content">
-              <div class="welcome-msg">
+      <section className="homepage-about">
+        <div className="container">
+          <div className="about4">
+            <div className="about4-content">
+              <div className="welcome-msg">
                 <h2>Welcome Message</h2>
               </div>
 
@@ -26,12 +26,12 @@ const HomePageAbout = () => {
                 should look and feel."
               </p>
 
-              <div class="linkedin">
+              <div className="linkedin">
                 <a
                   href="https://www.linkedin.com/in/deleon-gray-phd-67b2a3b/"
                   target="blank"
                 >
-                  <i class="fab fa-linkedin"></i>
+                  <i className="fab fa-linkedin"></i>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/deleon-gray-phd-67b2a3b/"
@@ -42,7 +42,7 @@ const HomePageAbout = () => {
               </div>
             </div>
 
-            <div class="about4-img">
+            <div className="about4-img">
               <img src={aboutImages} alt="" />
             </div>
           </div>

@@ -3,9 +3,9 @@ import React from "react";
 const Separator = () => {
   return (
     <>
-      <div class="separator">
-        <div class="container">
-          <div class="divider"></div>
+      <div className="separator">
+        <div className="container">
+          <div className="divider"></div>
         </div>
       </div>
     </>

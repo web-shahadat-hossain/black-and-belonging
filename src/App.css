@@ -73,6 +73,10 @@ li {
   transition: 0.4s;
 }
 
+.togglesearch2 {
+  display: block;
+}
+
 .togglesearch:before {
   content: "";
   position: absolute;
@@ -123,8 +127,8 @@ li {
 }
 
 /* ===== Header - Navbar ====== */
-header {
-  /* position: relative; */
+.header-container {
+  max-width: 1300px;
 }
 .navbar {
   display: flex;
@@ -307,6 +311,9 @@ header {
   right: -40px;
   border-radius: 6px;
   display: none;
+}
+.account-dropDown2 {
+  display: block;
 }
 .account-dropDown::before {
   content: "";
@@ -593,6 +600,7 @@ header {
   font-size: 38px;
   font-weight: 500;
   margin-bottom: 30px;
+  margin-top: 25px;
 }
 .top-banner .what-we-do span {
   color: var(--color-primary);
@@ -2272,7 +2280,7 @@ footer .headline .divider {
 }
 
 .news-section {
-  width: 1350px;
+  max-width: 1350px;
   margin: 0 auto;
 }
 

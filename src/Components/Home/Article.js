@@ -1,17 +1,18 @@
 import React from "react";
 import article from "../../Assets/images/article.jpg";
+import Separator from "../Shear/Separator";
 
 const Article = () => {
   return (
     <>
-      <article class="article">
-        <div class="container">
-          <div class="article-area">
-            <div class="article-img">
+      <article className="article">
+        <div className="container">
+          <div className="article-area">
+            <div className="article-img">
               <img src={article} alt="article" />
             </div>
 
-            <div class="article-content">
+            <div className="article-content">
               <h2>
                 Evolve Belonging Policies and Practices that Don't Serve
                 Students Well
@@ -29,6 +30,8 @@ const Article = () => {
           </div>
         </div>
       </article>
+
+      <Separator />
     </>
   );
 };

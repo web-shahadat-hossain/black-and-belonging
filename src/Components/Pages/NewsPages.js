@@ -1,17 +1,23 @@
 import React from "react";
-import Separator from "../Shear/Separator";
 import { newsData } from "../../Data/newsData";
-
-const News = () => {
-  console.log(newsData);
+const NewsPages = () => {
   return (
     <>
-      <Separator />
-      <section className="news-section">
-        <div className="container">
-          <div className="news">
-            <div className="row">
-              {newsData.slice(0, 3).map((data) => (
+      {/* <!-- ===== News Header ===== --> */}
+      <section class="news-header">
+        <div class="container">
+          <h1>Latest News</h1>
+        </div>
+      </section>
+
+      {/* <!-- ===== News ===== --> */}
+      <section class="news-section">
+        <div class="container">
+          <h2>News</h2>
+
+          <div class="news">
+            <div class="row">
+              {newsData.map((data) => (
                 <div className="col">
                   <div className="news-content">
                     <div className="inner">
@@ -43,4 +49,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default NewsPages;
