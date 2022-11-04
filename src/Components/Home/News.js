@@ -3,7 +3,6 @@ import Separator from "../Shear/Separator";
 import { newsData } from "../../Data/newsData";
 
 const News = () => {
-  console.log(newsData);
   return (
     <>
       <Separator />

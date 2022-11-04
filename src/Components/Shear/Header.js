@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../Assets/images/logo-white.png";
 
 const Header = () => {
@@ -26,22 +26,20 @@ const Header = () => {
     <>
       <header className Name="header-container">
         <nav className="navbar">
-          <Link to="/" className="logo">
+          <NavLink to="/" className="logo">
             <img src={logo} alt="logo" />
-          </Link>
+          </NavLink>
 
           <div className="nav-menu">
             <ul className="nav-list">
               <li>
-                <Link to="/" className="active">
-                  Home
-                </Link>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <Link to="mixtapes">Mixtapes</Link>
+                <NavLink to="mixtapes">Mixtapes</NavLink>
               </li>
               <li>
-                <Link to="news">News</Link>
+                <NavLink to="news">News</NavLink>
               </li>
             </ul>
 
@@ -130,21 +128,19 @@ const Header = () => {
             <nav id="sideNavMobile" className="mainmenu-nav">
               <ul className="navbar-list1">
                 <li>
-                  <Link to="/" className="active">
-                    Home
-                  </Link>
+                  <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
-                  <Link to="mixtapes">Mixtapes</Link>
+                  <NavLink to="mixtapes">Mixtapes</NavLink>
                 </li>
                 <li>
-                  <Link to="news">News</Link>
+                  <NavLink to="news">News</NavLink>
                 </li>
                 <li>
-                  <Link to="about">About Us</Link>
+                  <NavLink to="about">About Us</NavLink>
                 </li>
                 <li>
-                  <Link to="contact">Contact Us</Link>
+                  <NavLink to="contact">Contact Us</NavLink>
                 </li>
               </ul>
             </nav>
