@@ -18,24 +18,24 @@ const NewsPages = () => {
           <div className="news">
             <div className="row">
               {newsData.map((data) => (
-                <div classNameName="col">
-                  <div classNameName="news-content">
-                    <div classNameName="inner">
-                      <div classNameName="thumbnail">
+                <div className="col">
+                  <div className="news-content">
+                    <div className="inner">
+                      <div className="thumbnail">
                         <a href="#">
                           <img src={data.image} alt="thumbnail" />
                         </a>
                       </div>
-                      <div classNameName="content">
-                        <h4 classNameName="title">
+                      <div className="content">
+                        <h4 className="title">
                           <a href="#">{data.title}</a>
                         </h4>
-                        <p classNameName="desc">{data.description}</p>
-                        <a href="#" classNameName="read-btn">
-                          Read More <i classNameName="fas fa-caret-right"></i>
+                        <p className="desc">{data.description}</p>
+                        <a href="#" className="read-btn">
+                          Read More <i className="fas fa-caret-right"></i>
                         </a>
 
-                        <p classNameName="date-published">{data.date}</p>
+                        <p className="date-published">{data.date}</p>
                       </div>
                     </div>
                   </div>
