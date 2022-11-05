@@ -127,21 +127,57 @@ const Header = () => {
           <div className="content">
             <nav id="sideNavMobile" className="mainmenu-nav">
               <ul className="navbar-list1">
-                <li>
-                  <NavLink to="/">Home</NavLink>
-                </li>
-                <li>
-                  <NavLink to="mixtapes">Mixtapes</NavLink>
-                </li>
-                <li>
-                  <NavLink to="news">News</NavLink>
-                </li>
-                <li>
-                  <NavLink to="about">About Us</NavLink>
-                </li>
-                <li>
-                  <NavLink to="contact">Contact Us</NavLink>
-                </li>
+                <button
+                  style={{ backgroundColor: "transparent ", border: 0 }}
+                  className="close"
+                  id="close"
+                  onClick={closeBarClickHandler}
+                >
+                  <li>
+                    <NavLink to="/">Home</NavLink>
+                  </li>
+                </button>
+                <button
+                  style={{ backgroundColor: "transparent ", border: 0 }}
+                  className="close"
+                  id="close"
+                  onClick={closeBarClickHandler}
+                >
+                  <li>
+                    <NavLink to="mixtapes">Mixtapes</NavLink>
+                  </li>
+                </button>
+                <button
+                  style={{ backgroundColor: "transparent ", border: 0 }}
+                  className="close"
+                  id="close"
+                  onClick={closeBarClickHandler}
+                >
+                  <li>
+                    <NavLink to="news">News</NavLink>
+                  </li>
+                </button>
+                <button
+                  style={{ backgroundColor: "transparent ", border: 0 }}
+                  className="close"
+                  id="close"
+                  onClick={closeBarClickHandler}
+                >
+                  <li>
+                    <NavLink to="about">About Us</NavLink>
+                  </li>
+                </button>
+
+                <button
+                  style={{ backgroundColor: "transparent ", border: 0 }}
+                  className="close"
+                  id="close"
+                  onClick={closeBarClickHandler}
+                >
+                  <li>
+                    <NavLink to="contact">Contact Us</NavLink>
+                  </li>
+                </button>
               </ul>
             </nav>
           </div>
