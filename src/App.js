@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/Home/Home";
+import Contact from "./Components/Pages/Contact";
+import About from "./Components/Pages/About";
 import Mixtapes from "./Components/Pages/Mixtapes";
 import NewsPages from "./Components/Pages/NewsPages";
 import NotFound from "./Components/Pages/NotFound";
@@ -30,6 +32,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/news" element={<NewsPages />} />
             <Route path="/mixtapes" element={<Mixtapes />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

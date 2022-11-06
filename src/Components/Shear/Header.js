@@ -41,6 +41,12 @@ const Header = () => {
               <li>
                 <NavLink to="news">News</NavLink>
               </li>
+              <li>
+                <NavLink to="about">ABOUT US</NavLink>
+              </li>
+              <li>
+                <NavLink to="contact">CONTACT US</NavLink>
+              </li>
             </ul>
 
             <div className="right-menu">

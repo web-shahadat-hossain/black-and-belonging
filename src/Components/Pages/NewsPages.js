@@ -28,7 +28,7 @@ const NewsPages = () => {
                         <div className="inner">
                           <div className="thumbnail">
                             <a href="#">
-                              <img src="" alt="thumbnail" />
+                              <img src={data?.fimg_url} alt="thumbnail" />
                             </a>
                           </div>
                           <div className="content">
