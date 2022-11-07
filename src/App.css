@@ -494,7 +494,6 @@ li {
 }
 
 .popup-mobilemenu .togglesearch-mob input[type="search"] {
-  /* width: 230px; */
   outline: none;
   background-color: #121415;
   border-radius: 6px;
@@ -3202,5 +3201,11 @@ footer .headline .divider {
   }
   .contact-info .contact-info-area h3 {
     font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .popup-mobilemenu .togglesearch-mob input[type="search"] {
+    width: 140px;
   }
 }
