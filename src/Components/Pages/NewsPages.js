@@ -3,7 +3,7 @@ import Loading from "../Shear/Loading";
 import UseNews from "../../Hook/UseNews";
 const NewsPages = () => {
   const [news, newsLoading] = UseNews();
-  console.log(news);
+
   return (
     <>
       {newsLoading ? (

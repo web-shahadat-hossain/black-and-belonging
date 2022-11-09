@@ -1,7 +1,33 @@
+import { getByDisplayValue } from "@testing-library/react";
 import React from "react";
-import mixtape from "../../Assets/images/hb-mixtape.jpg";
+import { useState } from "react";
+import { useEffect } from "react";
+import Mixtape from "./Mixtape";
 
 const Mixtapes = () => {
+  const [Loading, isLoading] = useState(true);
+  const [mixtape, setMactape] = useState([]);
+  const [mixtapeOB, setMactapeOB] = useState({});
+
+  useEffect(() => {
+    fetch("https://blackandbelonging.com/wp-json/wp/v2/stm-courses").then(
+      (res) =>
+        res.json().then((data) => {
+          setMactape(data);
+          isLoading(false);
+        })
+    );
+  }, []);
+  useEffect(() => {
+    fetch("https://blackandbelonging.com/wp-json/wp/v2/media/10551").then(
+      (res) =>
+        res.json().then((data) => {
+          setMactapeOB(data);
+          isLoading(false);
+        })
+    );
+  }, []);
+
   return (
     <>
       {/* <!-- ===== Mix tapes Header ===== --> */}
@@ -55,28 +81,14 @@ const Mixtapes = () => {
         <div className="container">
           <div className="tape">
             <div className="row">
-              <div className="col">
-                <div className="tape-content">
-                  <div className="inner">
-                    <div className="thumbnail">
-                      <a href="mixtape_single.html">
-                        <img src={mixtape} alt="thumbnail" />
-                      </a>
-                    </div>
-                    <div className="content">
-                      <span className="category">Student Voice</span>
-                      <h4 className="title">
-                        <a href="mixtape_single.html">
-                          HeartBelonging Mixtape Vol. 1: Hoodies, Hair &
-                          Heritage
-                        </a>
-                      </h4>
-
-                      <p className="course-type">Free</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {mixtape.map((data) => (
+                <Mixtape
+                  mixtapeOB={mixtapeOB}
+                  key={data.id}
+                  Loadings={Loading}
+                  data={data}
+                />
+              ))}
             </div>
           </div>
         </div>
