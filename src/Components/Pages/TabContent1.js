@@ -1,25 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const TabContent1 = () => {
+  const [mixtape, setMactape] = useState([]);
+
+  useEffect(() => {
+    fetch("https://blackandbelonging.com/wp-json/wp/v2/stm-courses").then(
+      (res) =>
+        res.json().then((data) => {
+          setMactape(data);
+        })
+    );
+  }, []);
   return (
     <>
-      <div class="tab-pane show" id="tab-1-content">
-        <div class="smt-description">
-          <p>
-            Using hand-drawn animations, explainers, skits, and interviews,
-            young leaders from Durham, North Carolina unpack the concept of
-            belonging in a creative and energetic fashion. Combining research
-            with their own life experiences, Hoodies, Hair, and Heritage
-            presents promises and possibilities for a brighter tomorrow, and can
-            be used to spark next-level conversations among educators, students,
-            parents, and policymakers. Watch and listen closely as scholars from
-            Shepard Magnet Middle School, Hillside High School, J. D. Clement
-            Early College High School, Bethesda Elementary School, and City of
-            Medicine Academy teach us a thing or two about how belonging looks
-            from their point of view.
-          </p>
+      {mixtape.map((data) => (
+        <div class="tab-pane show" id="tab-1-content">
+          <div class="smt-description">
+            <p>{data.content.rendered}</p>
+          </div>
         </div>
-      </div>
+      ))}
     </>
   );
 };

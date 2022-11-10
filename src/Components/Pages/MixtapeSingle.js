@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Separator from "../Shear/Separator";
 import organizar from "../../Assets/images/organizer.jpg";
 import hbMixtape from "../../Assets/images/hb-mixtape.jpg";
 import { Link, Outlet } from "react-router-dom";
 
 const MixtapeSingle = () => {
+  const [mixtapeOB, setMactapeOB] = useState({});
+  useEffect(() => {
+    fetch("https://blackandbelonging.com/wp-json/wp/v2/media/10551").then(
+      (res) =>
+        res.json().then((data) => {
+          setMactapeOB(data);
+        })
+    );
+  }, []);
   return (
     <>
       <section class="smt">
@@ -63,6 +72,8 @@ const MixtapeSingle = () => {
             </div>
 
             <div class="col-lg-left">
+              <img src={mixtapeOB?.guid?.rendered} alt="" />
+
               <div class="nav-tabs-wrapper">
                 <ul class="nav-tabs">
                   <li>
