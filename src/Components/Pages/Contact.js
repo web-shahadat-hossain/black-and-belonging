@@ -4,25 +4,25 @@ import contact from "../../Assets/images/contact.jpg";
 const Contact = () => {
   return (
     <>
-      <section class="contact-section">
-        <div class="container">
+      <section className="contact-section">
+        <div className="container">
           <h1>Contact Us</h1>
 
-          <div class="contact-area">
-            <div class="contact-info">
-              <div class="contact-info-area">
+          <div className="contact-area">
+            <div className="contact-info">
+              <div className="contact-info-area">
                 <h3>Let’s Stay In Touch!</h3>
 
-                <div class="thumbnail">
+                <div className="thumbnail">
                   <img src={contact} alt="" />
                 </div>
 
-                <ul class="contact-list">
+                <ul className="contact-list">
                   <li>
                     <a href="https://contact@blackandbelonging.com">
-                      <i class="far fa-envelope"></i>
+                      <i className="far fa-envelope"></i>
                     </a>
-                    <div class="contact-details">
+                    <div className="contact-details">
                       <h4>Email</h4>
                       <p>
                         <a href="https://contact@blackandbelonging.com">
@@ -34,9 +34,9 @@ const Contact = () => {
 
                   <li>
                     <a href="https://twitter.com/HeartBelonging">
-                      <i class="fab fa-twitter"></i>
+                      <i className="fab fa-twitter"></i>
                     </a>
-                    <div class="contact-details">
+                    <div className="contact-details">
                       <h4>Twitter</h4>
                       <p>
                         <a href="https://twitter.com/HeartBelonging">
@@ -48,9 +48,9 @@ const Contact = () => {
 
                   <li>
                     <a href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q">
-                      <i class="fab fa-youtube"></i>
+                      <i className="fab fa-youtube"></i>
                     </a>
-                    <div class="contact-details">
+                    <div className="contact-details">
                       <h4>YouTube</h4>
                       <p>
                         <a href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q">
@@ -62,9 +62,9 @@ const Contact = () => {
 
                   <li>
                     <a href="https://www.instagram.com/heartbelonging/">
-                      <i class="far fa-envelope"></i>
+                      <i className="far fa-envelope"></i>
                     </a>
-                    <div class="contact-details">
+                    <div className="contact-details">
                       <h4>Instagram</h4>
                       <p>
                         <a href="https://www.instagram.com/heartbelonging/">
@@ -77,12 +77,12 @@ const Contact = () => {
               </div>
             </div>
 
-            <div class="contact-form">
+            <div className="contact-form">
               <form action="/" method="POST">
-                <div class="contact-form-wrapper">
-                  <div class="row">
-                    <div class="col col-lg-6">
-                      <div class="form-group">
+                <div className="contact-form-wrapper">
+                  <div className="row">
+                    <div className="col col-lg-6">
+                      <div className="form-group">
                         <label for="contact-name">Your Name</label>
                         <span>
                           <input
@@ -95,8 +95,8 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div class="col col-lg-6">
-                      <div class="form-group">
+                    <div className="col col-lg-6">
+                      <div className="form-group">
                         <label for="contact-email">Your Email</label>
                         <span>
                           <input
@@ -108,25 +108,25 @@ const Contact = () => {
                         </span>
                       </div>
                     </div>
-                    <section class="contact-section">
-                      <div class="container">
+                    <section className="contact-section">
+                      <div className="container">
                         <h1>Contact Us</h1>
 
-                        <div class="contact-area">
-                          <div class="contact-info">
-                            <div class="contact-info-area">
+                        <div className="contact-area">
+                          <div className="contact-info">
+                            <div className="contact-info-area">
                               <h3>Let’s Stay In Touch!</h3>
 
-                              <div class="thumbnail">
+                              <div className="thumbnail">
                                 <img src={contact} alt="" />
                               </div>
 
-                              <ul class="contact-list">
+                              <ul className="contact-list">
                                 <li>
                                   <a href="https://contact@blackandbelonging.com">
-                                    <i class="far fa-envelope"></i>
+                                    <i className="far fa-envelope"></i>
                                   </a>
-                                  <div class="contact-details">
+                                  <div className="contact-details">
                                     <h4>Email</h4>
                                     <p>
                                       <a href="https://contact@blackandbelonging.com">
@@ -138,9 +138,9 @@ const Contact = () => {
 
                                 <li>
                                   <a href="https://twitter.com/HeartBelonging">
-                                    <i class="fab fa-twitter"></i>
+                                    <i className="fab fa-twitter"></i>
                                   </a>
-                                  <div class="contact-details">
+                                  <div className="contact-details">
                                     <h4>Twitter</h4>
                                     <p>
                                       <a href="https://twitter.com/HeartBelonging">
@@ -152,9 +152,9 @@ const Contact = () => {
 
                                 <li>
                                   <a href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q">
-                                    <i class="fab fa-youtube"></i>
+                                    <i className="fab fa-youtube"></i>
                                   </a>
-                                  <div class="contact-details">
+                                  <div className="contact-details">
                                     <h4>YouTube</h4>
                                     <p>
                                       <a href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q">
@@ -166,9 +166,9 @@ const Contact = () => {
 
                                 <li>
                                   <a href="https://www.instagram.com/heartbelonging/">
-                                    <i class="far fa-envelope"></i>
+                                    <i className="far fa-envelope"></i>
                                   </a>
-                                  <div class="contact-details">
+                                  <div className="contact-details">
                                     <h4>Instagram</h4>
                                     <p>
                                       <a href="https://www.instagram.com/heartbelonging/">
@@ -181,12 +181,12 @@ const Contact = () => {
                             </div>
                           </div>
 
-                          <div class="contact-form">
+                          <div className="contact-form">
                             <form action="/" method="POST">
-                              <div class="contact-form-wrapper">
-                                <div class="row">
-                                  <div class="col col-lg-6">
-                                    <div class="form-group">
+                              <div className="contact-form-wrapper">
+                                <div className="row">
+                                  <div className="col col-lg-6">
+                                    <div className="form-group">
                                       <label for="contact-name">
                                         Your Name
                                       </label>
@@ -201,8 +201,8 @@ const Contact = () => {
                                     </div>
                                   </div>
 
-                                  <div class="col col-lg-6">
-                                    <div class="form-group">
+                                  <div className="col col-lg-6">
+                                    <div className="form-group">
                                       <label for="contact-email">
                                         Your Email
                                       </label>
@@ -217,8 +217,8 @@ const Contact = () => {
                                     </div>
                                   </div>
 
-                                  <div class="col col-lg-12">
-                                    <div class="form-group">
+                                  <div className="col col-lg-12">
+                                    <div className="form-group">
                                       <label for="contact-message">
                                         Your Message
                                       </label>
@@ -233,7 +233,7 @@ const Contact = () => {
                                     </div>
                                   </div>
 
-                                  <div class="col col-lg-12">
+                                  <div className="col col-lg-12">
                                     <input type="submit" value="SEND MESSAGE" />
                                   </div>
                                 </div>
@@ -243,8 +243,8 @@ const Contact = () => {
                         </div>
                       </div>
                     </section>
-                    <div class="col col-lg-12">
-                      <div class="form-group">
+                    <div className="col col-lg-12">
+                      <div className="form-group">
                         <label for="contact-message">Your Message</label>
                         <span>
                           <textarea
@@ -257,7 +257,7 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div class="col col-lg-12">
+                    <div className="col col-lg-12">
                       <input type="submit" value="SEND MESSAGE" />
                     </div>
                   </div>

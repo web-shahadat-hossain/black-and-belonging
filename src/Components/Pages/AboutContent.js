@@ -6,8 +6,8 @@ import about4 from "../../Assets/images/about/about4.jpg";
 const AboutContent = () => {
   return (
     <>
-      <div class="about1">
-        <div class="about-head">
+      <div className="about1">
+        <div className="about-head">
           <h1>About Black And Belonging</h1>
         </div>
 
@@ -32,13 +32,13 @@ const AboutContent = () => {
         </p>
       </div>
 
-      <div class="about2">
+      <div className="about2">
         <h2>
           Fostering and Assessing Opportunities to Belong: Our Unconventional
           Approach
         </h2>
 
-        <div class="about2-content">
+        <div className="about2-content">
           <p>
             Black and Belonging was born in research, and grown through the
             development of next-level resources that can be used to assess and
@@ -53,18 +53,18 @@ const AboutContent = () => {
             community liberation, and cultural affirmation of tomorrow.
           </p>
 
-          <div class="about2-img">
+          <div className="about2-img">
             <img src={about2} alt="about" />
           </div>
         </div>
       </div>
 
-      <div class="about3">
-        <div class="about3-img">
+      <div className="about3">
+        <div className="about3-img">
           <img src={about3} alt="about" />
         </div>
 
-        <div class="about3-content">
+        <div className="about3-content">
           <h2>A Platform for Youth Voice and Agency</h2>
           <p>
             Black and Belonging casts a spotlight on youth voices, creating
@@ -91,9 +91,9 @@ const AboutContent = () => {
         </div>
       </div>
 
-      <div class="about4">
-        <div class="about4-content">
-          <div class="welcome-msg">
+      <div className="about4">
+        <div className="about4-content">
+          <div className="welcome-msg">
             <h2>Welcome Message</h2>
           </div>
 
@@ -108,12 +108,12 @@ const AboutContent = () => {
             the schools of tomorrow should look and feel."
           </p>
 
-          <div class="linkedin">
+          <div className="linkedin">
             <a
               href="https://www.linkedin.com/in/deleon-gray-phd-67b2a3b/"
               target="_blank"
             >
-              <i class="fab fa-linkedin"></i>
+              <i className="fab fa-linkedin"></i>
             </a>
             <a
               href="https://www.linkedin.com/in/deleon-gray-phd-67b2a3b/"
@@ -124,7 +124,7 @@ const AboutContent = () => {
           </div>
         </div>
 
-        <div class="about4-img">
+        <div className="about4-img">
           <img src={about4} />
         </div>
       </div>

@@ -3,13 +3,13 @@ import React from "react";
 const AboutTeam = ({ data }) => {
   return (
     <>
-      <div class="col">
+      <div className="col">
         <a href={data?.href} target="blank">
-          <div class="our-tribe">
-            <div class="tribe-img">
+          <div className="our-tribe">
+            <div className="tribe-img">
               <img src={data?.image} alt="" />
             </div>
-            <div class="tribe-title">
+            <div className="tribe-title">
               <a
                 href="https://www.linkedin.com/in/joanna-ali-808b7a223/"
                 target="blank"

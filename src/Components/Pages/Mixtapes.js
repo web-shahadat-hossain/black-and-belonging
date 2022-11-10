@@ -2,10 +2,12 @@ import { getByDisplayValue } from "@testing-library/react";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Loading from "../Shear/Loading";
 import Mixtape from "./Mixtape";
 
 const Mixtapes = () => {
-  const [Loading, isLoading] = useState(true);
+  const [Loadings, isLoading] = useState(true);
   const [mixtape, setMactape] = useState([]);
   const [mixtapeOB, setMactapeOB] = useState({});
 
@@ -80,16 +82,20 @@ const Mixtapes = () => {
       <section className="tape-section">
         <div className="container">
           <div className="tape">
-            <div className="row">
-              {mixtape.map((data) => (
-                <Mixtape
-                  mixtapeOB={mixtapeOB}
-                  key={data.id}
-                  Loadings={Loading}
-                  data={data}
-                />
-              ))}
-            </div>
+            {Loadings ? (
+              <Loading />
+            ) : (
+              <div className="row">
+                {mixtape.map((data) => (
+                  <Mixtape
+                    mixtapeOB={mixtapeOB}
+                    key={data.id}
+                    Loadings={Loading}
+                    data={data}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
