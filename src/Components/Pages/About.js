@@ -8,13 +8,13 @@ const About = () => {
   return (
     <>
       {" "}
-      <section class="about-page">
-        <div class="container">
+      <section className="about-page">
+        <div className="container">
           <AboutContent />
-          <div class="about5">
+          <div className="about5">
             <h2>Our Tribe</h2>
 
-            <div class="row">
+            <div className="row">
               {aboutTeam.map((data) => (
                 <AboutTeam key={data.id} data={data}></AboutTeam>
               ))}
