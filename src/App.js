@@ -13,6 +13,8 @@ import Loading from "./Components/Shear/Loading";
 import MixtapeSingle from "./Components/Pages/MixtapeSingle";
 import TabContent1 from "./Components/Pages/TabContent1";
 import TabContent2 from "./Components/Pages/TabContent2";
+import Login from "./Components/Pages/Login";
+import Register from "./Components/Pages/Register";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -44,6 +46,8 @@ function App() {
                 element={<TabContent2 />}
               />
             </Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

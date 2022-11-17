@@ -87,10 +87,10 @@ const Header = () => {
                 >
                   <ul>
                     <li>
-                      <a href="login.html">Log In</a>
+                      <Link to="/login">Log In</Link>
                     </li>
                     <li>
-                      <a href="register.html">Register</a>
+                      <Link to="/register">Register</Link>
                     </li>
                   </ul>
                 </div>
@@ -202,20 +202,12 @@ const Header = () => {
           </div>
 
           <div className="signin">
-            <button
-              className="signin-btn"
-              type="submit"
-              onclick="location.href='login.html'"
-            >
+            <Link to="/login" className="signin-btn" type="submit">
               Log In
-            </button>
-            <button
-              className="signin-btn"
-              type="submit"
-              onclick="location.href='register.html'"
-            >
+            </Link>
+            <Link to="/register" className="signin-btn" type="submit">
               Register
-            </button>
+            </Link>
           </div>
         </div>
       </div>
