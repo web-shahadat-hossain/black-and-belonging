@@ -15,6 +15,7 @@ import TabContent1 from "./Components/Pages/TabContent1";
 import TabContent2 from "./Components/Pages/TabContent2";
 import Login from "./Components/Pages/Login";
 import Register from "./Components/Pages/Register";
+import Fundraise from "./Components/Pages/Fundraise";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,6 +49,7 @@ function App() {
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/fundraise" element={<Fundraise />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

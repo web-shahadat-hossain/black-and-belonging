@@ -47,10 +47,13 @@ const Header = () => {
               <li>
                 <NavLink to="contact">CONTACT US</NavLink>
               </li>
+              <li>
+                <NavLink to="fundraise">FUNDRAISE</NavLink>
+              </li>
             </ul>
 
             <div className="right-menu">
-              <a href="#" className="favorites">
+              <a href="!#" className="favorites">
                 <i className="fa-regular fa-heart"></i>
               </a>
               <div className="search-toggler">
@@ -184,12 +187,23 @@ const Header = () => {
                     <NavLink to="contact">Contact Us</NavLink>
                   </li>
                 </button>
+
+                <button
+                  style={{ backgroundColor: "transparent ", border: 0 }}
+                  className="close"
+                  id="close"
+                  onClick={closeBarClickHandler}
+                >
+                  <li>
+                    <NavLink to="fundraise">FUNDRAISE</NavLink>
+                  </li>
+                </button>
               </ul>
             </nav>
           </div>
 
           <div className="right-menu right-menu-mob">
-            <a href="#">
+            <a href="!#">
               <i className="fa fa-heart mob-favorites"></i>
             </a>
 
@@ -202,11 +216,24 @@ const Header = () => {
           </div>
 
           <div className="signin">
-            <Link to="/login" className="signin-btn" type="submit">
-              Log In
+            <Link to="/login">
+              <button
+                onClick={closeBarClickHandler}
+                className="signin-btn"
+                type="submit"
+              >
+                Log In
+              </button>
             </Link>
-            <Link to="/register" className="signin-btn" type="submit">
-              Register
+
+            <Link to="/register">
+              <button
+                onClick={closeBarClickHandler}
+                className="signin-btn"
+                type="submit"
+              >
+                Register
+              </button>
             </Link>
           </div>
         </div>

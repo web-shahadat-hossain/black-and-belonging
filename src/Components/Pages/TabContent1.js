@@ -14,8 +14,8 @@ const TabContent1 = () => {
   return (
     <>
       {mixtape.map((data) => (
-        <div class="tab-pane show" id="tab-1-content">
-          <div class="smt-description">
+        <div className="tab-pane show" id="tab-1-content">
+          <div className="smt-description">
             <p>{data.content.rendered}</p>
           </div>
         </div>

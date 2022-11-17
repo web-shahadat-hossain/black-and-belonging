@@ -4,17 +4,17 @@ import Separator from "../Shear/Separator";
 const Register = () => {
   return (
     <>
-      <section class="login-section">
-        <div class="container">
-          <div class="login-area">
-            <div class="login-form">
+      <section className="login-section">
+        <div className="container">
+          <div className="login-area">
+            <div className="login-form">
               <form>
-                <div class="login-form-wrapper register-wrapper">
+                <div className="login-form-wrapper register-wrapper">
                   <h1>Register Here</h1>
 
-                  <div class="row">
-                    <div class="col col-lg-6">
-                      <div class="form-group">
+                  <div className="row">
+                    <div className="col col-lg-6">
+                      <div className="form-group">
                         <label for="first-name">First Name</label>
                         <span>
                           <input
@@ -28,8 +28,8 @@ const Register = () => {
                       </div>
                     </div>
 
-                    <div class="col col-lg-6">
-                      <div class="form-group">
+                    <div className="col col-lg-6">
+                      <div className="form-group">
                         <label for="last-name">Last Name</label>
                         <span>
                           <input
@@ -43,8 +43,8 @@ const Register = () => {
                       </div>
                     </div>
 
-                    <div class="col col-lg-6">
-                      <div class="form-group">
+                    <div className="col col-lg-6">
+                      <div className="form-group">
                         <label for="username">Username</label>
                         <span>
                           <input
@@ -58,8 +58,8 @@ const Register = () => {
                       </div>
                     </div>
 
-                    <div class="col col-lg-6">
-                      <div class="form-group">
+                    <div className="col col-lg-6">
+                      <div className="form-group">
                         <label for="email">E-Mail</label>
                         <span>
                           <input
@@ -73,8 +73,8 @@ const Register = () => {
                       </div>
                     </div>
 
-                    <div class="col col-lg-6">
-                      <div class="form-group">
+                    <div className="col col-lg-6">
+                      <div className="form-group">
                         <label for="password">Password</label>
                         <span>
                           <input
@@ -88,8 +88,8 @@ const Register = () => {
                       </div>
                     </div>
 
-                    <div class="col col-lg-6">
-                      <div class="form-group">
+                    <div className="col col-lg-6">
+                      <div className="form-group">
                         <label for="confirm-password">Re-Enter Password</label>
                         <span>
                           <input
@@ -103,8 +103,8 @@ const Register = () => {
                       </div>
                     </div>
 
-                    <div class="col col-lg-6">
-                      <a href="#" class="google-login">
+                    <div className="col col-lg-6">
+                      <a href="#" className="google-login">
                         <img
                           src="https://codestuff.website/images/google.png"
                           alt=""
@@ -113,7 +113,7 @@ const Register = () => {
                       </a>
                     </div>
 
-                    <div class="col col-lg-6">
+                    <div className="col col-lg-6">
                       <input type="submit" value="REGISTER" />
                     </div>
                   </div>
