@@ -16,6 +16,7 @@ import TabContent2 from "./Components/Pages/TabContent2";
 import Login from "./Components/Pages/Login";
 import Register from "./Components/Pages/Register";
 import Fundraise from "./Components/Pages/Fundraise";
+import CookiePolicy from "./Components/Pages/CookiePolicy";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -50,6 +51,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/fundraise" element={<Fundraise />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

@@ -4,43 +4,43 @@ import heart from "../../Assets/images/user-heart.png";
 const FundraiseArea = () => {
   return (
     <>
-      <div class="fundraise-area">
-        <div class="left-section">
-          <div class="fund-main-thumb">
+      <div className="fundraise-area">
+        <div className="left-section">
+          <div className="fund-main-thumb">
             <img src={web} alt="Fundraise" />
           </div>
 
-          <div class="mobile-content">
-            <div class="right-headline">
+          <div className="mobile-content">
+            <div className="right-headline">
               <h4>
                 <span>$7,655</span> USD raised of $17,000 goal
               </h4>
-              <div class="progressBar">
-                <div class="progressLine"></div>
+              <div className="progressBar">
+                <div className="progressLine"></div>
               </div>
               <h4>85 Supporters</h4>
             </div>
 
-            <div class="fund-options">
-              <button class="donate">Shop Now</button>
-              <button class="share">Share</button>
+            <div className="fund-options">
+              <button className="donate">Shop Now</button>
+              <button className="share">Share</button>
             </div>
           </div>
 
-          <div class="fund-content">
-            <div class="headline">
-              <div class="fund-heart-icon">
-                <i class="fa fa-hand-holding-heart"></i>
+          <div className="fund-content">
+            <div className="headline">
+              <div className="fund-heart-icon">
+                <i className="fa fa-hand-holding-heart"></i>
               </div>
-              <div class="tag">
-                <i class="fas fa-user-friends"></i>Team Description
+              <div className="tag">
+                <i className="fas fa-user-friends"></i>Team Description
                 <p>
                   William Logan and 8 others are organizing this pop-up-shop.
                 </p>
               </div>
             </div>
 
-            <div class="fund-desc">
+            <div className="fund-desc">
               <p>
                 Opened in 1922 as Hillside Park High School, Hillside High
                 School is one of the oldest historically Black high schools in
@@ -84,38 +84,38 @@ const FundraiseArea = () => {
               </a>
             </div>
 
-            <div class="fund-options">
-              <button class="donate">Shop</button>
-              <button class="share">Share</button>
+            <div className="fund-options">
+              <button className="donate">Shop</button>
+              <button className="share">Share</button>
             </div>
 
-            <div class="mobile-content">
+            <div className="mobile-content">
               <h3 style={{ color: " #c4cfde", margin: " 20px 0" }}>
                 Supporter (85)
               </h3>
-              <div class="recent-stats">
-                <div class="stat-icon">
-                  <i class="fa fa-arrow-trend-up"></i>
+              <div className="recent-stats">
+                <div className="stat-icon">
+                  <i className="fa fa-arrow-trend-up"></i>
                 </div>
                 <span>22 people just supported</span>
               </div>
 
-              <ul class="donator-list">
+              <ul className="donator-list">
                 <li>
                   <a href="!#">
-                    <div class="d-icon">
+                    <div className="d-icon">
                       <img src={heart} alt="heart" />
                     </div>
                   </a>
-                  <div class="d-details">
+                  <div className="d-details">
                     <a href="!#">
-                      <p class="d-name">Frances Starn</p>
+                      <p className="d-name">Frances Starn</p>
                     </a>
                     <div>
                       <a href="!#">
-                        <p class="amount">$20</p>
+                        <p className="amount">$20</p>
                       </a>
-                      <a href="!#" class="d-type">
+                      <a href="!#" className="d-type">
                         Recent Supporter
                       </a>
                     </div>
@@ -124,19 +124,19 @@ const FundraiseArea = () => {
 
                 <li>
                   <a href="!#">
-                    <div class="d-icon">
+                    <div className="d-icon">
                       <img src={heart} alt="heart" />
                     </div>
                   </a>
-                  <div class="d-details">
+                  <div className="d-details">
                     <a href="!#">
-                      <p class="d-name">Frances Starn</p>
+                      <p className="d-name">Frances Starn</p>
                     </a>
                     <div>
                       <a href="!#">
-                        <p class="amount">$20</p>
+                        <p className="amount">$20</p>
                       </a>
-                      <a href="!#" class="d-type">
+                      <a href="!#" className="d-type">
                         Recent Supporter
                       </a>
                     </div>
@@ -145,19 +145,19 @@ const FundraiseArea = () => {
 
                 <li>
                   <a href="!#">
-                    <div class="d-icon">
+                    <div className="d-icon">
                       <img src={heart} alt="" />
                     </div>
                   </a>
-                  <div class="d-details">
+                  <div className="d-details">
                     <a href="!#">
-                      <p class="d-name">Frances Starn</p>
+                      <p className="d-name">Frances Starn</p>
                     </a>
                     <div>
                       <a href="!#">
-                        <p class="amount">$20</p>
+                        <p className="amount">$20</p>
                       </a>
-                      <a href="@#" class="d-type">
+                      <a href="@#" className="d-type">
                         Recent Supporter
                       </a>
                     </div>
@@ -165,55 +165,55 @@ const FundraiseArea = () => {
                 </li>
               </ul>
 
-              <div class="fund-options d-options">
-                <button class="all-donations">See All</button>
-                <button class="top-donations">
-                  <i class="fa fa-star"></i> See top supporters
+              <div className="fund-options d-options">
+                <button className="all-donations">See All</button>
+                <button className="top-donations">
+                  <i className="fa fa-star"></i> See top supporters
                 </button>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="right-section">
-          <div class="right-headline">
+        <div className="right-section">
+          <div className="right-headline">
             <h4>
               <span>$7,655</span> USD raised of $17,000 goal
             </h4>
-            <div class="progressBar">
-              <div class="progressLine"></div>
+            <div className="progressBar">
+              <div className="progressLine"></div>
             </div>
             <h4>85 Supporters</h4>
           </div>
 
-          <div class="fund-options">
-            <button class="donate">Shop Now</button>
-            <button class="share">Share</button>
+          <div className="fund-options">
+            <button className="donate">Shop Now</button>
+            <button className="share">Share</button>
           </div>
 
-          <div class="recent-stats">
-            <div class="stat-icon">
-              <i class="fa fa-arrow-trend-up"></i>
+          <div className="recent-stats">
+            <div className="stat-icon">
+              <i className="fa fa-arrow-trend-up"></i>
             </div>
             <span>22 people just supported</span>
           </div>
 
-          <ul class="donator-list">
+          <ul className="donator-list">
             <li>
               <a href="!#">
-                <div class="d-icon">
+                <div className="d-icon">
                   <img src={heart} alt="heart" />
                 </div>
               </a>
-              <div class="d-details">
+              <div className="d-details">
                 <a href="!#">
-                  <p class="d-name">Frances Starn</p>
+                  <p className="d-name">Frances Starn</p>
                 </a>
                 <div>
                   <a href="!#">
-                    <p class="amount">$20</p>
+                    <p className="amount">$20</p>
                   </a>
-                  <a href="!#" class="d-type">
+                  <a href="!#" className="d-type">
                     Recent Supporter
                   </a>
                 </div>
@@ -222,19 +222,19 @@ const FundraiseArea = () => {
 
             <li>
               <a href="!#">
-                <div class="d-icon">
+                <div className="d-icon">
                   <img src={heart} alt="heart" />
                 </div>
               </a>
-              <div class="d-details">
+              <div className="d-details">
                 <a href="!#">
-                  <p class="d-name">Frances Starn</p>
+                  <p className="d-name">Frances Starn</p>
                 </a>
                 <div>
                   <a href="!#">
-                    <p class="amount">$20</p>
+                    <p className="amount">$20</p>
                   </a>
-                  <a href="!#" class="d-type">
+                  <a href="!#" className="d-type">
                     Recent Supporter
                   </a>
                 </div>
@@ -243,19 +243,19 @@ const FundraiseArea = () => {
 
             <li>
               <a href="!#">
-                <div class="d-icon">
+                <div className="d-icon">
                   <img src={heart} alt="" />
                 </div>
               </a>
-              <div class="d-details">
+              <div className="d-details">
                 <a href="!#">
-                  <p class="d-name">Frances Starn</p>
+                  <p className="d-name">Frances Starn</p>
                 </a>
                 <div>
                   <a href="!#">
-                    <p class="amount">$20</p>
+                    <p className="amount">$20</p>
                   </a>
-                  <a href="!#" class="d-type">
+                  <a href="!#" className="d-type">
                     Recent Supporter
                   </a>
                 </div>
@@ -263,10 +263,10 @@ const FundraiseArea = () => {
             </li>
           </ul>
 
-          <div class="fund-options d-options">
-            <button class="all-donations">See All</button>
-            <button class="top-donations">
-              <i class="fa fa-star"></i> See top supporters
+          <div className="fund-options d-options">
+            <button className="all-donations">See All</button>
+            <button className="top-donations">
+              <i className="fa fa-star"></i> See top supporters
             </button>
           </div>
         </div>

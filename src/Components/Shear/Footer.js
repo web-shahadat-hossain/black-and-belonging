@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import tape from "../../Assets/images/tape.jpg";
 
 const Footer = () => {
@@ -43,22 +44,22 @@ const Footer = () => {
               <h3>Pages</h3>
               <ul className="page-list">
                 <li>
-                  <a href="/">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="mixtapes.html">Mixtapes</a>
+                  <Link to="mixtapes">Mixtapes</Link>
                 </li>
                 <li>
-                  <a href="news.html">News</a>
+                  <Link to="news">News</Link>
                 </li>
                 <li>
-                  <a href="about.html">About Us</a>
+                  <Link to="about">About Us</Link>
                 </li>
                 <li>
-                  <a href="contact.html">Contact Us</a>
+                  <Link to="contact">Contact Us</Link>
                 </li>
                 <li>
-                  <a href="fundraise.html">Fundraise Us</a>
+                  <Link to="fundraise">Fundraise Us</Link>
                 </li>
               </ul>
             </div>
