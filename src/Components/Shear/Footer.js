@@ -17,7 +17,7 @@ const Footer = () => {
               </p>
 
               <a href="mixtapes.html" className="about-btn">
-                Join the conversation
+                Keep in Touch
               </a>
             </div>
 

@@ -15,7 +15,7 @@ const Fundraise = () => {
             <FundraisingTeam />
 
             <div className="comments-section">
-              <h3>Words of support (6)</h3>
+              <h3>Words of supports (6)</h3>
               <span className="comment-note">
                 After shopping, please feel free to share a few words of
                 support, encouragement or inspiration.

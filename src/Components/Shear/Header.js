@@ -48,7 +48,7 @@ const Header = () => {
                 <NavLink to="contact">CONTACT US</NavLink>
               </li>
               <li>
-                <NavLink to="fundraise">FUNDRAISE</NavLink>
+                <NavLink to="fundraise">Pop Up Shop</NavLink>
               </li>
             </ul>
 
@@ -195,7 +195,7 @@ const Header = () => {
                   onClick={closeBarClickHandler}
                 >
                   <li>
-                    <NavLink to="fundraise">FUNDRAISE</NavLink>
+                    <NavLink to="fundraise">Pop Up Shop</NavLink>
                   </li>
                 </button>
               </ul>
