@@ -2,13 +2,31 @@ import React from "react";
 import Separator from "../Shear/Separator";
 
 const Login = () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(e.target);
+    const result = Object.fromEntries(data.entries());
+    fetch(
+      `https://blackandbelonging.com/wp-json/custom-plugin/login?username=${result.loginEmail}&password=${result.loginPassword}`,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  };
   return (
     <>
       <section className="login-section">
         <div className="container">
           <div className="login-area">
             <div className="login-form">
-              <form>
+              <form onSubmit={handleLogin}>
                 <div className="login-form-wrapper">
                   <h1>Log In Here</h1>
 
@@ -16,7 +34,7 @@ const Login = () => {
                     <div className="col col-lg-12">
                       <div className="login-type">
                         <p>Please choose from the sign in options below.</p>
-                        <a href="#" className="google-login">
+                        <a href="!#" className="google-login">
                           <img src="https://codestuff.website/images/google.png" />{" "}
                           Sign in with Google
                         </a>
@@ -29,9 +47,9 @@ const Login = () => {
                       <div className="form-group">
                         <span>
                           <input
-                            type="email"
+                            type="text"
                             placeholder="Enter Email or Username"
-                            name="login-email"
+                            name="loginEmail"
                             size="40"
                             id="login-email"
                           />
@@ -45,7 +63,7 @@ const Login = () => {
                           <input
                             type="password"
                             placeholder="Enter Password"
-                            name="login-password"
+                            name="loginPassword"
                             size="40"
                             id="login-password"
                           />

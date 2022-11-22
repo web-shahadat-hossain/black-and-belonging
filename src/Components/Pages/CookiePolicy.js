@@ -3,11 +3,11 @@ import React from "react";
 const CookiePolicy = () => {
   return (
     <>
-      <div class="terms-of-use">
-        <div class="container">
+      <div className="terms-of-use">
+        <div className="container">
           <h1>Cookie Policy</h1>
 
-          <div class="terms-content">
+          <div className="terms-content">
             <p>Last updated on May 30th, 2022.</p>
 
             <p>
