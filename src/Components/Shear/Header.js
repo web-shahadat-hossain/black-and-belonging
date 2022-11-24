@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../Assets/images/logo-white.png";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [account, setAccount] = useState(false);
   const [search, setSearch] = useState(false);
+  const navigate = useNavigate();
+
+  const authentication = JSON.parse(localStorage.getItem("user"));
+  console.log(authentication);
   const openBarClickHandler = () => {
     setOpen(!open);
   };
@@ -90,10 +95,30 @@ const Header = () => {
                 >
                   <ul>
                     <li>
-                      <Link to="/login">Log In</Link>
+                      {authentication ? (
+                        <p style={{ color: "white" }}> {authentication.name}</p>
+                      ) : (
+                        <Link to="/login">Log In</Link>
+                      )}
                     </li>
                     <li>
-                      <Link to="/register">Register</Link>
+                      {authentication ? (
+                        <button
+                          style={{
+                            background: "transparent",
+                            border: "none",
+                            color: "white",
+                          }}
+                          onClick={() => {
+                            localStorage.removeItem("user", authentication);
+                            navigate("/");
+                          }}
+                        >
+                          Log Out
+                        </button>
+                      ) : (
+                        <Link to="/register">Register</Link>
+                      )}
                     </li>
                   </ul>
                 </div>
@@ -216,25 +241,42 @@ const Header = () => {
           </div>
 
           <div className="signin">
-            <Link to="/login">
-              <button
-                onClick={closeBarClickHandler}
-                className="signin-btn"
-                type="submit"
-              >
-                Log In
-              </button>
-            </Link>
+            {authentication ? (
+              <p style={{ color: "white" }}> {authentication.name}</p>
+            ) : (
+              <Link to="/login">
+                <button
+                  onClick={closeBarClickHandler}
+                  className="signin-btn"
+                  type="submit"
+                >
+                  Log In
+                </button>
+              </Link>
+            )}
 
-            <Link to="/register">
+            {authentication ? (
               <button
-                onClick={closeBarClickHandler}
                 className="signin-btn"
-                type="submit"
+                onClick={() => {
+                  localStorage.removeItem("user", authentication);
+                  navigate("/");
+                  setOpen(!open);
+                }}
               >
-                Register
+                Log Out
               </button>
-            </Link>
+            ) : (
+              <Link to="/register">
+                <button
+                  onClick={closeBarClickHandler}
+                  className="signin-btn"
+                  type="submit"
+                >
+                  Register
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>

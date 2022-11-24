@@ -1,7 +1,10 @@
 import React from "react";
 import Separator from "../Shear/Separator";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -18,7 +21,13 @@ const Login = () => {
       }
     )
       .then((response) => response.json())
-      .then((json) => console.log(json));
+      .then((json) => {
+        navigate("/");
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ id: json.ID, name: json.data.display_name })
+        );
+      });
   };
   return (
     <>
@@ -35,7 +44,10 @@ const Login = () => {
                       <div className="login-type">
                         <p>Please choose from the sign in options below.</p>
                         <a href="!#" className="google-login">
-                          <img src="https://codestuff.website/images/google.png" />{" "}
+                          <img
+                            alt=""
+                            src="https://codestuff.website/images/google.png"
+                          />{" "}
                           Sign in with Google
                         </a>
                         <p>OR</p>
@@ -75,7 +87,7 @@ const Login = () => {
                       <input type="submit" value="LOGIN" />
                       <p className="signin-term">
                         By signing in, you agree to our
-                        <a href="#">Terms of Use.</a>
+                        <a href="!#">Terms of Use.</a>
                       </p>
                     </div>
 
