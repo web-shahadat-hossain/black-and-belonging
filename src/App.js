@@ -19,21 +19,18 @@ import Fundraise from "./Components/Pages/Fundraise";
 import CookiePolicy from "./Components/Pages/CookiePolicy";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const handleLoading = () => {
-    setIsLoading(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("load", handleLoading);
-    return () => window.removeEventListener("load", handleLoading);
-  }, []);
-
+  const [loading, setLoading] = useState(true);
+  const spinner = document.getElementById("spinner");
+  if (spinner) {
+    setTimeout(() => {
+      spinner.style.display = "none";
+      setLoading(false);
+    }, 2000);
+  }
   return (
     <>
-      {!isLoading ? (
+      {!loading && (
         <>
-          {" "}
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -56,8 +53,6 @@ function App() {
           </Routes>
           <Footer />
         </>
-      ) : (
-        <Loading />
       )}
     </>
   );

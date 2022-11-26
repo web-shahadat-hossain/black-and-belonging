@@ -150,7 +150,7 @@ li {
   justify-content: flex-start;
 }
 .navbar .logo img {
-  width: 70%;
+  width: 210px;
 }
 
 .navbar .nav-menu {
@@ -1701,6 +1701,7 @@ footer .headline .divider {
   border-radius: 50%;
   display: flex;
   margin: 0 auto;
+  width: 220px;
   height: 220px;
 }
 
@@ -2742,10 +2743,6 @@ footer .headline .divider {
     font-weight: 700;
   }
 
-  .navbar .logo img {
-    width: 100%;
-  }
-
   .top-banner .contact-area {
     left: 50%;
   }
@@ -3206,5 +3203,9 @@ footer .headline .divider {
 @media only screen and (max-width: 390px) {
   .popup-mobilemenu .togglesearch-mob input[type="search"] {
     width: 140px;
+  }
+  .tribe-img img {
+    height: 150px;
+    width: 150px;
   }
 }

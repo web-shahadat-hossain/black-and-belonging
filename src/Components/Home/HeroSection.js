@@ -7,7 +7,7 @@ const HeroSection = () => {
       <section className="top-banner">
         <div className="top-banner-img">
           <div className="contact-area">
-            <div className="contact-form">
+            {/* <div className="contact-form">
               <form action="/" method="POST">
                 <div className="contact-form-wrapper">
                   <div className="row">
@@ -73,7 +73,7 @@ const HeroSection = () => {
                   </div>
                 </div>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
