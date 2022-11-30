@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import convertHtmlToReact from "@hedgedoc/html-to-react";
 
 const TabContent1 = () => {
   const [mixtape, setMactape] = useState([]);
@@ -16,7 +17,7 @@ const TabContent1 = () => {
       {mixtape.map((data) => (
         <div className="tab-pane show" id="tab-1-content">
           <div className="smt-description">
-            <p>{data.content.rendered}</p>
+            {convertHtmlToReact(data.content.rendered)}
           </div>
         </div>
       ))}

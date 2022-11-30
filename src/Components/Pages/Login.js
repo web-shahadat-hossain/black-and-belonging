@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Separator from "../Shear/Separator";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   const handleLogin = async (e) => {
+    setButtonLoading(true);
     e.preventDefault();
 
     const data = new FormData(e.target);
@@ -22,11 +24,16 @@ const Login = () => {
     )
       .then((response) => response.json())
       .then((json) => {
+        setButtonLoading(false);
         navigate("/");
+
         localStorage.setItem(
           "user",
           JSON.stringify({ id: json.ID, name: json.data.display_name })
         );
+      })
+      .catch((err) => {
+        setButtonLoading(false);
       });
   };
   return (
@@ -84,7 +91,13 @@ const Login = () => {
                     </div>
 
                     <div className="col col-lg-12">
-                      <input type="submit" value="LOGIN" />
+                      {buttonLoading ? (
+                        <button style={{ width: "100%" }} class="buttonload">
+                          <i class="fa fa-spinner fa-spin"></i>Loading
+                        </button>
+                      ) : (
+                        <input type="submit" value="LOGIN" />
+                      )}
                       <p className="signin-term">
                         By signing in, you agree to our
                         <a href="!#">Terms of Use.</a>
@@ -94,7 +107,7 @@ const Login = () => {
                     <div className="col col-lg-12">
                       <p className="login-to-register">
                         New to Black and Belonging?
-                        <a href="register.html">Create an account.</a>
+                        <Link to="/register">Create an account.</Link>
                       </p>
                     </div>
                   </div>

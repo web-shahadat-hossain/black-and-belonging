@@ -52,20 +52,14 @@ const Header = () => {
               <li>
                 <NavLink to="contact">CONTACT US</NavLink>
               </li>
-              <li>
-                <NavLink to="fundraise">Pop Up Shop</NavLink>
-              </li>
             </ul>
 
             <div className="right-menu">
               <a href="!#" className="favorites">
                 <i className="fa-regular fa-heart"></i>
               </a>
-              <div className="search-toggler">
-                <button
-                  onClick={searchClickHandler}
-                  style={{ backgroundColor: "transparent ", border: 0 }}
-                >
+              <div onClick={searchClickHandler} className="search-toggler">
+                <button style={{ backgroundColor: "transparent ", border: 0 }}>
                   {" "}
                   <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -80,11 +74,8 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="account">
-                <button
-                  onClick={accountClickHandler}
-                  style={{ backgroundColor: "transparent ", border: 0 }}
-                >
+              <div onClick={accountClickHandler} className="account">
+                <button style={{ backgroundColor: "transparent ", border: 0 }}>
                   <i className="fa fa-user"></i>
                 </button>
 
@@ -96,7 +87,15 @@ const Header = () => {
                   <ul>
                     <li>
                       {authentication ? (
-                        <p style={{ color: "white" }}> {authentication.name}</p>
+                        <button
+                          style={{
+                            background: "transparent",
+                            border: "none",
+                            color: "white",
+                          }}
+                        >
+                          Account
+                        </button>
                       ) : (
                         <Link to="/login">Log In</Link>
                       )}
@@ -114,7 +113,7 @@ const Header = () => {
                             navigate("/");
                           }}
                         >
-                          Log Out
+                          Logout
                         </button>
                       ) : (
                         <Link to="/register">Register</Link>
@@ -212,17 +211,6 @@ const Header = () => {
                     <NavLink to="contact">Contact Us</NavLink>
                   </li>
                 </button>
-
-                <button
-                  style={{ backgroundColor: "transparent ", border: 0 }}
-                  className="close"
-                  id="close"
-                  onClick={closeBarClickHandler}
-                >
-                  <li>
-                    <NavLink to="fundraise">Pop Up Shop</NavLink>
-                  </li>
-                </button>
               </ul>
             </nav>
           </div>
@@ -242,7 +230,7 @@ const Header = () => {
 
           <div className="signin">
             {authentication ? (
-              <p style={{ color: "white" }}> {authentication.name}</p>
+              <button className="signin-btn">Account</button>
             ) : (
               <Link to="/login">
                 <button

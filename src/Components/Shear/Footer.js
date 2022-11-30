@@ -16,9 +16,9 @@ const Footer = () => {
                 attend predominantly Black K-12 public schools.
               </p>
 
-              <a href="mixtapes.html" className="about-btn">
-                Keep in Touch
-              </a>
+              <Link to="/pop-up-shop" className="about-btn">
+                Join The Conversation
+              </Link>
             </div>
 
             <div className="footer-cols">
@@ -59,7 +59,7 @@ const Footer = () => {
                   <Link to="contact">Contact Us</Link>
                 </li>
                 <li>
-                  <Link to="fundraise">Fundraise Us</Link>
+                  <Link to="pop-up-shop">Pop Up Shop</Link>
                 </li>
               </ul>
             </div>
@@ -78,7 +78,9 @@ const Footer = () => {
                   </li>
                   <li>
                     <i className="fa fa-phone"></i>
-                    <p>(919) 593-7730</p>
+                    <p>
+                      <a href="tel:1111"> (919) 593-7730</a>
+                    </p>
                   </li>
                   <li>
                     <i className="fa-solid fa-envelope"></i>
@@ -93,22 +95,28 @@ const Footer = () => {
 
               <ul className="social-links">
                 <li>
-                  <a href="https://twitter.com/HeartBelonging">
+                  <a target="black" href="https://twitter.com/HeartBelonging">
                     <i className="fa-brands fa-twitter"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://instagram.com/HeartBelonging">
+                  <a target="black" href="https://instagram.com/HeartBelonging">
                     <i className="fa-brands fa-instagram"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/company/black-and-belonging/about/">
+                  <a
+                    target="black"
+                    href="https://www.linkedin.com/company/black-and-belonging/about/"
+                  >
                     <i className="fa-brands fa-linkedin"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q">
+                  <a
+                    target="black"
+                    href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q"
+                  >
                     <i className="fa-brands fa-youtube"></i>
                   </a>
                 </li>
@@ -129,16 +137,16 @@ const Footer = () => {
             <div className="footer-col">
               <ul className="copyright-links">
                 <li>
-                  <a href="termsofuse.html">Terms of use</a>
+                  <Link to="/termsofuse">Terms of use</Link>
                 </li>
                 <li>
-                  <a href="cookiepolicy.html">Cookie Policy</a>
+                  <Link to="/cookiepolicy">Cookie Policy</Link>
                 </li>
                 <li>
-                  <a href="community.html">Community Guidelines</a>
+                  <Link to="/community">Community Guidelines</Link>
                 </li>
                 <li>
-                  <a href="dmca-notice.html">DMCA Notice</a>
+                  <Link to="/dmca-notice">DMCA Notice</Link>
                 </li>
               </ul>
             </div>

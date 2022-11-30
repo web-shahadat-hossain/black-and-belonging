@@ -1,6 +1,8 @@
 import React from "react";
 import Loading from "../Shear/Loading";
 import UseNews from "../../Hook/UseNews";
+import convertHtmlToReact from "@hedgedoc/html-to-react";
+
 const NewsPages = () => {
   const [news, newsLoading] = UseNews();
 
@@ -26,15 +28,17 @@ const NewsPages = () => {
                     <div className="news-content">
                       <div className="inner">
                         <div className="thumbnail">
-                          <a href="#">
+                          <a href="#!">
                             <img src={data?.fimg_url} alt="thumbnail" />
                           </a>
                         </div>
                         <div className="content">
                           <h4 className="title">
-                            <a href="#">{data?.title?.rendered}</a>
+                            <a href="#!">{data?.title?.rendered}</a>
                           </h4>
-                          <p className="desc">{data?.excerpt?.rendered}</p>
+                          <p className="desc">
+                            {convertHtmlToReact(data?.excerpt?.rendered)}
+                          </p>
                           <a href={data?.link} className="read-btn">
                             Read More <i className="fas fa-caret-right"></i>
                           </a>

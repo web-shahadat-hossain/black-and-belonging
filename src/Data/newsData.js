@@ -19,6 +19,7 @@ export const newsData = [
       "Schools across North Carolina recently welcomed students back for the academic year, and the first-day experience at Neal Magnet Middle School was one for the",
     image: img1,
     date: "September 6, 2022",
+    id: 1,
   },
   {
     title: "How Frank Dumas Made a Name For Himself at 10-Years Old",
@@ -26,6 +27,7 @@ export const newsData = [
       "Frank Dumas IV recently participated in the Scripps National Spelling Bee, representing North Carolina, the Duke Office of Durham and Community Affairs, and Bethesda Elementary",
     image: img2,
     date: "August 31, 2022",
+    id: 2,
   },
   {
     title: "thumbnail Belonging Helps Black, Latino Students Feel Engaged",
@@ -33,6 +35,7 @@ export const newsData = [
       "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
     image: img3,
     date: "August 24, 2022",
+    id: 3,
   },
   {
     title:
@@ -41,6 +44,7 @@ export const newsData = [
       "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
     image: img4,
     date: "August 24, 2022",
+    id: 4,
   },
   {
     title:
@@ -49,6 +53,7 @@ export const newsData = [
       "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
     image: img5,
     date: "August 24, 2022",
+    id: 5,
   },
   {
     title:
@@ -57,6 +62,7 @@ export const newsData = [
       "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
     image: img6,
     date: "August 24, 2022",
+    id: 6,
   },
   {
     title:
@@ -65,6 +71,7 @@ export const newsData = [
       "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
     image: img7,
     date: "August 24, 2022",
+    id: 7,
   },
   {
     title:
@@ -73,6 +80,7 @@ export const newsData = [
       "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
     image: img8,
     date: "August 24, 2022",
+    id: 8,
   },
   {
     title:
@@ -81,6 +89,7 @@ export const newsData = [
       "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
     image: img9,
     date: "August 24, 2022",
+    id: 9,
   },
   {
     title:
@@ -89,6 +98,7 @@ export const newsData = [
       "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
     image: img10,
     date: "August 24, 2022",
+    id: 10,
   },
   {
     title:
@@ -97,6 +107,7 @@ export const newsData = [
       "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
     image: img11,
     date: "August 24, 2022",
+    id: 11,
   },
   {
     title:
@@ -105,5 +116,6 @@ export const newsData = [
       "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
     image: img12,
     date: "August 24, 2022",
+    id: 12,
   },
 ];

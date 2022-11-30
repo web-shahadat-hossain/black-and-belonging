@@ -16,7 +16,12 @@ import TabContent2 from "./Components/Pages/TabContent2";
 import Login from "./Components/Pages/Login";
 import Register from "./Components/Pages/Register";
 import Fundraise from "./Components/Pages/Fundraise";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import CookiePolicy from "./Components/Pages/CookiePolicy";
+import Termsofuse from "./Components/Pages/Termsofuse";
+import DmcaNotice from "./Components/Pages/DmcaNotice";
+import Event from "./Components/Pages/Event";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -47,10 +52,15 @@ function App() {
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/fundraise" element={<Fundraise />} />
-            <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/pop-up-shop" element={<Fundraise />} />
+            <Route path="/cookiepolicy" element={<CookiePolicy />} />
+            <Route path="/termsofuse" element={<Termsofuse />} />
+            <Route path="/community" element={<Termsofuse />} />
+            <Route path="/dmca-notice" element={<DmcaNotice />} />
+            <Route path="/event" element={<Event />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <ToastContainer />
           <Footer />
         </>
       )}

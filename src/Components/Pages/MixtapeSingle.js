@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import Separator from "../Shear/Separator";
 import organizar from "../../Assets/images/organizer.jpg";
 import hbMixtape from "../../Assets/images/hb-mixtape.jpg";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 const MixtapeSingle = () => {
   const [mixtapeOB, setMactapeOB] = useState({});
+  const [active, setInActive] = useState(false);
   useEffect(() => {
     fetch("https://blackandbelonging.com/wp-json/wp/v2/media/10551").then(
       (res) =>
@@ -28,7 +29,7 @@ const MixtapeSingle = () => {
                 <a href="#">
                   <div className="organizer-details">
                     <div className="thumbnail left-align">
-                      <img src={organizar} />
+                      <img alt="" src={organizar} />
                     </div>
 
                     <div className="details left-align">
@@ -76,20 +77,20 @@ const MixtapeSingle = () => {
 
               <div className="nav-tabs-wrapper">
                 <ul className="nav-tabs">
-                  <li>
+                  <li onClick={() => setInActive(false)}>
                     <Link
                       to="/mixtape-single"
-                      className="tab-item tab-active"
+                      className={`tab-item ${active ? "" : "tab-active"}`}
                       id="tab-1"
                     >
                       Description
                     </Link>
                   </li>
 
-                  <li>
+                  <li onClick={() => setInActive(true)}>
                     <Link
                       to="/mixtape-single/tracklist"
-                      className="tab-item"
+                      className={`tab-item ${active ? "tab-active" : ""}`}
                       id="tab-2"
                     >
                       Tracklist

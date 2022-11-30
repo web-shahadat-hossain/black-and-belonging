@@ -3,7 +3,6 @@ import React from "react";
 import { presenceData } from "../../../Data/NationalPresenceData";
 
 const NationalPresence = () => {
-  console.log(presenceData);
   return (
     <div>
       <div className="what-we-do">
@@ -17,7 +16,7 @@ const NationalPresence = () => {
           <div className="achievements">
             <div className="row">
               {presenceData.map((data) => (
-                <div className="col">
+                <div key={data.id} className="col">
                   <div className="achievement-content">
                     <div className="inner">
                       <div className="icon">

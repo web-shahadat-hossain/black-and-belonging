@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <>
       <section className="contact-section">
-        <div className="container">
+        <div style={{ maxWidth: "1300px" }} className="container">
           <h1>Contact Us</h1>
 
           <div className="contact-area">
@@ -13,19 +13,25 @@ const Contact = () => {
               <div className="contact-info-area">
                 <h3>Let’s Stay In Touch!</h3>
 
-                <div className="thumbnail">
+                {/* <div className="thumbnail">
                   <img src={contact} alt="" />
-                </div>
+                </div> */}
 
                 <ul className="contact-list">
                   <li>
-                    <a href="https://contact@blackandbelonging.com">
+                    <a
+                      target="black"
+                      href="https://contact@blackandbelonging.com"
+                    >
                       <i className="far fa-envelope"></i>
                     </a>
                     <div className="contact-details">
                       <h4>Email</h4>
                       <p>
-                        <a href="https://contact@blackandbelonging.com">
+                        <a
+                          target="black"
+                          href="https://contact@blackandbelonging.com"
+                        >
                           contact@blackandbelonging.com
                         </a>
                       </p>
@@ -33,13 +39,16 @@ const Contact = () => {
                   </li>
 
                   <li>
-                    <a href="https://twitter.com/HeartBelonging">
+                    <a target="black" href="https://twitter.com/HeartBelonging">
                       <i className="fab fa-twitter"></i>
                     </a>
                     <div className="contact-details">
                       <h4>Twitter</h4>
                       <p>
-                        <a href="https://twitter.com/HeartBelonging">
+                        <a
+                          target="black"
+                          href="https://twitter.com/HeartBelonging"
+                        >
                           @HeartBelonging
                         </a>
                       </p>
@@ -47,13 +56,19 @@ const Contact = () => {
                   </li>
 
                   <li>
-                    <a href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q">
+                    <a
+                      target="black"
+                      href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q"
+                    >
                       <i className="fab fa-youtube"></i>
                     </a>
                     <div className="contact-details">
                       <h4>YouTube</h4>
                       <p>
-                        <a href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q">
+                        <a
+                          target="black"
+                          href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q"
+                        >
                           HeartBelonging
                         </a>
                       </p>
@@ -61,13 +76,19 @@ const Contact = () => {
                   </li>
 
                   <li>
-                    <a href="https://www.instagram.com/heartbelonging/">
+                    <a
+                      target="black"
+                      href="https://www.instagram.com/heartbelonging/"
+                    >
                       <i className="far fa-envelope"></i>
                     </a>
                     <div className="contact-details">
                       <h4>Instagram</h4>
                       <p>
-                        <a href="https://www.instagram.com/heartbelonging/">
+                        <a
+                          target="black"
+                          href="https://www.instagram.com/heartbelonging/"
+                        >
                           @HeartBelonging
                         </a>
                       </p>
