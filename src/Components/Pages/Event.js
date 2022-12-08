@@ -1,38 +1,56 @@
 import React, { useEffect, useState } from "react";
 import Separator from "../Shear/Separator";
-import organizar from "../../Assets/images/organizer.jpg";
-import hbMixtape from "../../Assets/images/hb-mixtape.jpg";
-import { Link, NavLink, Outlet } from "react-router-dom";
 
+import { Link, Outlet } from "react-router-dom";
+import { createContext } from "react";
+export const EventNested = createContext("");
 const Event = () => {
-  const [mixtapeOB, setMactapeOB] = useState({});
-  const [active, setInActive] = useState(false);
+  const [event, setEvent] = useState({});
+
+  const eventVideoID = event?.youtube_link;
+
   useEffect(() => {
-    fetch("https://blackandbelonging.com/wp-json/wp/v2/media/10551").then(
-      (res) =>
-        res.json().then((data) => {
-          setMactapeOB(data);
-        })
-    );
+    fetch("https://blackandbelonging.com/wp-json/637922eaa5/v2/kargetevents")
+      .then((res) => res.json())
+      .then((data) => {
+        setEvent(data);
+      });
   }, []);
   return (
     <>
       <section className="smt">
-        <div className="container" style={{ maxWidth: "1300px" }}>
+        <div
+          className="container event-container"
+          style={{ maxWidth: "1300px" }}
+        >
           <div className="row ">
             <div className="col-lg-left event ">
               <iframe
                 width="100%"
                 height="350"
-                src="https://www.youtube.com/embed/FIy_cGkVgM8"
+                src={`https://www.youtube.com/embed/${eventVideoID?.slice(17)}`}
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
               <h1 style={{ color: "#ff014f" }} className="what-we-do-head">
-                Black and Belonging - Fundraise
+                {event.title}
               </h1>
+              <div className="event-date">
+                <div>
+                  <h4>START</h4>
+                  <p>{event.event_start}</p>
+                </div>
+                <div>
+                  <h4>END</h4>
+                  <p>{event.event_end}</p>
+                </div>
+                <div>
+                  <h4>LOCATION</h4>
+                  <p>{event.event_location}</p>
+                </div>
+              </div>
               <div className="nav-tabs-wrapper">
                 <ul className="event-nav-tabs ">
                   <li>
@@ -40,32 +58,20 @@ const Event = () => {
                   </li>
 
                   <li>
-                    <Link className="event-btn" to="/event">
+                    <Link className="event-btn" to="/event/how-to-apply">
                       How to Apply
                     </Link>
                   </li>
                   <li>
-                    <Link to="/event">The Process</Link>
+                    <Link to="/event/the-process">The Process</Link>
                   </li>
                 </ul>
               </div>
 
               <div className="tab-content">
-                <Outlet />
-                <p style={{ color: "#c4cfde" }}>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Error at impedit itaque nulla tempore quam nam dolorem libero.
-                  Tempora, asperiores quo. Quae eius, optio dolorum dolore,
-                  obcaecati itaque nulla omnis veritatis ullam rerum debitis
-                  aspernatur nam assumenda tenetur quaerat non quisquam officia
-                  provident nobis deserunt, ipsa ex maxime impedit neque? Rem
-                  quas officia, inventore et, eos velit vel minus aliquid
-                  obcaecati totam sint similique! Natus blanditiis laborum
-                  reprehenderit temporibus assumenda ratione quis, tempora
-                  corrupti dolor ut eveniet optio doloremque quos sunt sequi
-                  culpa error modi a ex rerum cumque. Libero voluptas, repellat
-                  enim tenetur quasi alias reiciendis dolorum? Ipsum, nemo.
-                </p>
+                <EventNested.Provider value={event}>
+                  <Outlet />
+                </EventNested.Provider>
               </div>
             </div>
             <div className="col-sm-right">
@@ -171,7 +177,7 @@ const Event = () => {
                     </div>
 
                     <div className="col col-lg-12">
-                      <input type="submit" value="JOINT NOW" />
+                      <input type="submit" value="JOIN NOW!" />
                     </div>
                   </div>
                 </div>

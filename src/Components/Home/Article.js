@@ -9,7 +9,10 @@ const Article = () => {
         <div className="container">
           <div className="article-area">
             <div className="article-img">
-              <img src={article} alt="article" />
+              <img
+                src="https://staging.blackandbelonging.com/static/media/article.291e16f8422c5f3cdf2c.jpg"
+                alt="article"
+              />
             </div>
 
             <div className="article-content">

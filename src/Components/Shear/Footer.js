@@ -16,7 +16,7 @@ const Footer = () => {
                 attend predominantly Black K-12 public schools.
               </p>
 
-              <Link to="/pop-up-shop" className="about-btn">
+              <Link to="/contact" className="about-btn">
                 Join The Conversation
               </Link>
             </div>

@@ -22,6 +22,10 @@ import CookiePolicy from "./Components/Pages/CookiePolicy";
 import Termsofuse from "./Components/Pages/Termsofuse";
 import DmcaNotice from "./Components/Pages/DmcaNotice";
 import Event from "./Components/Pages/Event";
+import EventOverview from "./Components/Pages/EventOverview";
+import EventHowToApply from "./Components/Pages/EventHowToApply";
+import EventTheProcess from "./Components/Pages/EventTheProcess";
+import AllEvent from "./Components/Pages/AllEvent";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -57,7 +61,12 @@ function App() {
             <Route path="/termsofuse" element={<Termsofuse />} />
             <Route path="/community" element={<Termsofuse />} />
             <Route path="/dmca-notice" element={<DmcaNotice />} />
-            <Route path="/event" element={<Event />} />
+            <Route path="/events" element={<AllEvent />} />
+            <Route path="/event" element={<Event />}>
+              <Route path="/event" element={<EventOverview />} />
+              <Route path="/event/how-to-apply" element={<EventHowToApply />} />
+              <Route path="/event/the-process" element={<EventTheProcess />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
           <ToastContainer />

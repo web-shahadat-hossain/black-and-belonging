@@ -554,7 +554,7 @@ li {
   height: 100vh;
   position: relative;
   width: 100%;
-  background: url(./Assets/images/main-bg.PNG);
+  background: url(./Assets/images/main-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -2167,6 +2167,21 @@ footer .headline .divider {
 .event-nav-tabs .event-btn {
   margin: 0 15px;
 }
+.event .event-date {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 30px;
+  justify-content: space-around;
+}
+.event .event-date h4 {
+  color: var(--color-primary);
+}
+.event .event-date p {
+  color: #fff;
+  padding-top: 5px;
+}
+
 /* ----- SMT NAV TABS ----- */
 .nav-tabs {
   display: flex;
@@ -2858,6 +2873,10 @@ footer .headline .divider {
     flex-direction: column-reverse;
     gap: 30px;
   }
+  .event-container .row {
+    flex-direction: column;
+    gap: 30px;
+  }
 
   .smt .row .col-lg-left,
   .smt .row .col-sm-right {
@@ -2913,6 +2932,28 @@ footer .headline .divider {
   .login-form-wrapper {
     padding: 20px 40px !important;
     width: 100% !important;
+  }
+}
+
+@media (max-width: 608px) {
+  .event-nav-tabs {
+    flex-wrap: wrap;
+  }
+  .event-nav-tabs li {
+    margin: 10px 0;
+  }
+  .event-nav-tabs .event-btn {
+    margin: 0px;
+  }
+  .event-container .col-sm-right {
+    padding: 0;
+    margin: 0 auto;
+  }
+  .event .event-date {
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 10px;
   }
 }
 

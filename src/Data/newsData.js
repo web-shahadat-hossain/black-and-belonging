@@ -17,7 +17,8 @@ export const newsData = [
       "Go DJ! Divine Nine and College Leaders Show Big Love at Neal’s Welcome Back Kick-Off",
     description:
       "Schools across North Carolina recently welcomed students back for the academic year, and the first-day experience at Neal Magnet Middle School was one for the",
-    image: img1,
+    image:
+      "https://staging.blackandbelonging.com/static/media/news1.b83ea7594effee3fad6a.jpg",
     date: "September 6, 2022",
     id: 1,
   },
@@ -25,7 +26,8 @@ export const newsData = [
     title: "How Frank Dumas Made a Name For Himself at 10-Years Old",
     description:
       "Frank Dumas IV recently participated in the Scripps National Spelling Bee, representing North Carolina, the Duke Office of Durham and Community Affairs, and Bethesda Elementary",
-    image: img2,
+    image:
+      "https://staging.blackandbelonging.com/static/media/news2.80664b7d27ba96f04d7b.jpeg",
     date: "August 31, 2022",
     id: 2,
   },
@@ -33,7 +35,8 @@ export const newsData = [
     title: "thumbnail Belonging Helps Black, Latino Students Feel Engaged",
     description:
       "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
-    image: img3,
+    image:
+      "https://staging.blackandbelonging.com/static/media/news3.b1d192cc7824e2185c06.jpg",
     date: "August 24, 2022",
     id: 3,
   },

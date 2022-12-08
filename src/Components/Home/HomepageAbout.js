@@ -43,7 +43,10 @@ const HomePageAbout = () => {
             </div>
 
             <div className="about4-img">
-              <img src={aboutImages} alt="" />
+              <img
+                src="https://staging.blackandbelonging.com/static/media/about4.7dfd440edc672ac3f502.jpg"
+                alt=""
+              />
             </div>
           </div>
         </div>
