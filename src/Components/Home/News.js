@@ -15,16 +15,16 @@ const News = () => {
                   <div className="news-content">
                     <div className="inner">
                       <div className="thumbnail">
-                        <a href="#">
+                        <a href="!#">
                           <img src={data.image} alt="thumbnail" />
                         </a>
                       </div>
                       <div className="content">
                         <h4 className="title">
-                          <a href="#">{data.title}</a>
+                          <a href="!#">{data.title}</a>
                         </h4>
                         <p className="desc">{data.description}</p>
-                        <a href="#" className="read-btn">
+                        <a href="!#" className="read-btn">
                           Read More <i className="fas fa-caret-right"></i>
                         </a>
 

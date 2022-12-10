@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
 import Separator from "../Shear/Separator";
+import { useParams } from "react-router";
 
 import { Link, Outlet } from "react-router-dom";
 import { createContext } from "react";
 export const EventNested = createContext("");
 const Event = () => {
   const [event, setEvent] = useState({});
-
+  const { id } = useParams();
+  console.log(event);
   const eventVideoID = event?.youtube_link;
 
   useEffect(() => {
-    fetch("https://blackandbelonging.com/wp-json/637922eaa5/v2/kargetevents")
+    fetch(
+      `https://blackandbelonging.com/wp-json/637922eaa5/v2/kargetevents?id=${id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setEvent(data);
       });
-  }, []);
+  }, [id]);
   return (
     <>
       <section className="smt">
@@ -54,7 +58,7 @@ const Event = () => {
               <div className="nav-tabs-wrapper">
                 <ul className="event-nav-tabs ">
                   <li>
-                    <Link to="/event">Overview</Link>
+                    <Link to={`/event/${id}`}>Overview</Link>
                   </li>
 
                   <li>

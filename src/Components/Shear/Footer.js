@@ -61,6 +61,9 @@ const Footer = () => {
                 <li>
                   <Link to="pop-up-shop">Pop Up Shop</Link>
                 </li>
+                <li>
+                  <Link to="/events">Events</Link>
+                </li>
               </ul>
             </div>
 

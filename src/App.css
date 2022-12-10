@@ -2,7 +2,8 @@
 
 :root {
   --montserrat: "Montserrat", sans-serif;
-  --poppins: "Poppins", sans-serif;
+  --poppins: "Montserrat", sans-serif;
+  /* --poppins: "Poppins", sans-serif; */
   --main-background-color: #212428;
   --background-color-1: linear-gradient(145deg, #1e2024, #23272b);
   --color-lighten: #c4cfde;
@@ -554,7 +555,7 @@ li {
   height: 100vh;
   position: relative;
   width: 100%;
-  background: url(./Assets/images/main-bg.png);
+  background: url(./Assets/images/main-bg.d438498824f1c0f1c04b-1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -2174,12 +2175,26 @@ footer .headline .divider {
   padding-bottom: 30px;
   justify-content: space-around;
 }
+.events-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
 .event .event-date h4 {
+  color: var(--color-primary);
+}
+.events-date h4 {
   color: var(--color-primary);
 }
 .event .event-date p {
   color: #fff;
   padding-top: 5px;
+}
+.events-date p {
+  color: #fff;
+  padding-top: 5px;
+  text-align: center;
 }
 
 /* ----- SMT NAV TABS ----- */

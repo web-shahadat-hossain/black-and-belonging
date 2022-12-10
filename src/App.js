@@ -26,6 +26,9 @@ import EventOverview from "./Components/Pages/EventOverview";
 import EventHowToApply from "./Components/Pages/EventHowToApply";
 import EventTheProcess from "./Components/Pages/EventTheProcess";
 import AllEvent from "./Components/Pages/AllEvent";
+import VideoModal from "./Components/Shear/VideoModal";
+import Profile from "./Components/Dashboard/Profile";
+import SingleBlog from "./Components/Pages/SingleBlog";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -60,12 +63,20 @@ function App() {
             <Route path="/cookiepolicy" element={<CookiePolicy />} />
             <Route path="/termsofuse" element={<Termsofuse />} />
             <Route path="/community" element={<Termsofuse />} />
+            <Route path="/single_blog" element={<SingleBlog />} />
             <Route path="/dmca-notice" element={<DmcaNotice />} />
+            <Route path="/profile" element={<Profile />}></Route>
             <Route path="/events" element={<AllEvent />} />
-            <Route path="/event" element={<Event />}>
-              <Route path="/event" element={<EventOverview />} />
-              <Route path="/event/how-to-apply" element={<EventHowToApply />} />
-              <Route path="/event/the-process" element={<EventTheProcess />} />
+            <Route path="/event/:id" element={<Event />}>
+              <Route path="/event/:id" element={<EventOverview />} />
+              <Route
+                path="/event/:id/how-to-apply"
+                element={<EventHowToApply />}
+              />
+              <Route
+                path="/event/:id/the-process"
+                element={<EventTheProcess />}
+              />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

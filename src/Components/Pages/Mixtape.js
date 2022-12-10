@@ -1,3 +1,4 @@
+import { convertHtmlToReact } from "@hedgedoc/html-to-react/dist/convertHtmlToReact";
 import React from "react";
 import { Link } from "react-router-dom";
 import Loading from "../Shear/Loading";
@@ -17,7 +18,10 @@ const Mixtape = ({ data, Loadings, mixtapeOB }) => {
             <div className="content">
               <span className="category">Student Voice</span>
               <h4 className="title">
-                <a href="mixtape_single.html">{data?.title?.rendered}</a>
+                <a href="mixtape_single.html">
+                  {" "}
+                  {convertHtmlToReact(data?.title?.rendered)}
+                </a>
               </h4>
 
               <p className="course-type">Free</p>

@@ -13,8 +13,7 @@ import img12 from "../Assets/images/news/news12.jpg";
 
 export const newsData = [
   {
-    title:
-      "Go DJ! Divine Nine and College Leaders Show Big Love at Neal’s Welcome Back Kick-Off",
+    title: "Go DJ! Divine Nine and College Leaders Show Big Love at Neal’s ...",
     description:
       "Schools across North Carolina recently welcomed students back for the academic year, and the first-day experience at Neal Magnet Middle School was one for the",
     image:

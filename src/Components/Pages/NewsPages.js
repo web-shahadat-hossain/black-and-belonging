@@ -34,7 +34,9 @@ const NewsPages = () => {
                         </div>
                         <div className="content">
                           <h4 className="title">
-                            <a href="#!">{data?.title?.rendered}</a>
+                            <a href="#!">
+                              {data?.title?.rendered.slice(0, 100)} ...
+                            </a>
                           </h4>
                           <p className="desc">
                             {convertHtmlToReact(data?.excerpt?.rendered)}
