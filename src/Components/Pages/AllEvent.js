@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const AllEvent = () => {
   const [event, setEvent] = useState([]);
   const [newsLoading, setNewsLoading] = useState(true);
-  console.log(event);
   useEffect(() => {
     fetch("https://blackandbelonging.com/wp-json/637922eaa5/v2/kargetevents")
       .then((res) => res.json())
@@ -54,7 +53,13 @@ const AllEvent = () => {
                         </div>
                         <div className="content">
                           <h4 className="title">
-                            <a href="#!"> {data?.title}</a>
+                            <Link
+                              style={{ textTransform: "capitalize" }}
+                              to={`/event/${data?.event_id}`}
+                            >
+                              {" "}
+                              {data?.title}
+                            </Link>
                           </h4>
                           <div className="events-date">
                             <div>
@@ -80,7 +85,7 @@ const AllEvent = () => {
                             to={`/event/${data?.event_id}`}
                             className="read-btn"
                           >
-                            Read More <i className="fas fa-caret-right"></i>
+                            Join Now! <i className="fas fa-caret-right"></i>
                           </Link>
 
                           <p className="date-published">{event.event_start}</p>

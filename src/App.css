@@ -603,6 +603,13 @@ li {
   margin-bottom: 30px;
   margin-top: 25px;
 }
+.event-head {
+  color: var(--color-primary);
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
 .top-banner .what-we-do span {
   color: var(--color-primary);
   font-size: 18px;
@@ -761,7 +768,6 @@ li {
 .news .inner {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 .news-content .content-detail {
   display: flex;
@@ -2996,7 +3002,9 @@ footer .headline .divider {
   .what-we-do-head {
     font-size: 24px;
   }
-
+  .event-head {
+    font-size: 24px;
+  }
   .news .row .col,
   .achievements .row .col,
   .tape-section .tape .row .col {
@@ -3262,6 +3270,10 @@ footer .headline .divider {
   }
   .what-we-do-head {
     font-size: 20px;
+  }
+  .event-head {
+    color: var(--color-primary);
+    font-size: 18px;
   }
   .top-banner .what-we-do span {
     font-size: 16px;

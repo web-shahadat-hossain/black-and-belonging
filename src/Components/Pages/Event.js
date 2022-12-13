@@ -4,12 +4,15 @@ import { useParams } from "react-router";
 
 import { Link, Outlet } from "react-router-dom";
 import { createContext } from "react";
+import Loading from "../Shear/Loading";
 export const EventNested = createContext("");
 const Event = () => {
-  const [event, setEvent] = useState({});
+  const [newsLoading, setNewsLoading] = useState(true);
+
+  const [event, setEvent] = useState([]);
   const { id } = useParams();
   console.log(event);
-  const eventVideoID = event?.youtube_link;
+  const eventVideoID = event[0]?.youtube_link;
 
   useEffect(() => {
     fetch(
@@ -18,6 +21,7 @@ const Event = () => {
       .then((res) => res.json())
       .then((data) => {
         setEvent(data);
+        setNewsLoading(false);
       });
   }, [id]);
   return (
@@ -28,56 +32,63 @@ const Event = () => {
           style={{ maxWidth: "1300px" }}
         >
           <div className="row ">
-            <div className="col-lg-left event ">
-              <iframe
-                width="100%"
-                height="350"
-                src={`https://www.youtube.com/embed/${eventVideoID?.slice(17)}`}
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <h1 style={{ color: "#ff014f" }} className="what-we-do-head">
-                {event.title}
-              </h1>
-              <div className="event-date">
-                <div>
-                  <h4>START</h4>
-                  <p>{event.event_start}</p>
+            {newsLoading ? (
+              <Loading />
+            ) : (
+              <div className="col-lg-left event ">
+                <iframe
+                  width="100%"
+                  height="350"
+                  src={`https://www.youtube.com/embed/${eventVideoID?.slice(
+                    17
+                  )}`}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <h1 className="event-head">{event[0]?.title}</h1>
+                <div className="event-date">
+                  <div>
+                    <h4>START</h4>
+                    <p>{event[0]?.event_start}</p>
+                  </div>
+                  <div>
+                    <h4>END</h4>
+                    <p>{event[0]?.event_end}</p>
+                  </div>
+                  <div>
+                    <h4>LOCATION</h4>
+                    <p>{event[0]?.event_location}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4>END</h4>
-                  <p>{event.event_end}</p>
-                </div>
-                <div>
-                  <h4>LOCATION</h4>
-                  <p>{event.event_location}</p>
-                </div>
-              </div>
-              <div className="nav-tabs-wrapper">
-                <ul className="event-nav-tabs ">
-                  <li>
-                    <Link to={`/event/${id}`}>Overview</Link>
-                  </li>
+                <div className="nav-tabs-wrapper">
+                  <ul className="event-nav-tabs ">
+                    <li>
+                      <Link to={`/event/${id}`}>Overview</Link>
+                    </li>
 
-                  <li>
-                    <Link className="event-btn" to="/event/how-to-apply">
-                      How to Apply
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/event/the-process">The Process</Link>
-                  </li>
-                </ul>
-              </div>
+                    <li>
+                      <Link
+                        className="event-btn"
+                        to={`/event/${id}/how-to-apply`}
+                      >
+                        How to Apply
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to={`/event/${id}/the-process`}>The Process</Link>
+                    </li>
+                  </ul>
+                </div>
 
-              <div className="tab-content">
-                <EventNested.Provider value={event}>
-                  <Outlet />
-                </EventNested.Provider>
+                <div className="tab-content">
+                  <EventNested.Provider value={event[0]}>
+                    <Outlet />
+                  </EventNested.Provider>
+                </div>
               </div>
-            </div>
+            )}
             <div className="col-sm-right">
               <form action="/" method="POST">
                 <div className="contact-form-wrapper">

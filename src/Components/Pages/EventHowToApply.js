@@ -8,7 +8,7 @@ const EventHowToApply = () => {
   return (
     <>
       <p style={{ color: "#c4cfde" }}>
-        {convertHtmlToReact(event.how_to_apply)}
+        {convertHtmlToReact(event?.how_to_apply)}
       </p>
     </>
   );

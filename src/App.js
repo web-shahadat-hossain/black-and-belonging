@@ -9,7 +9,6 @@ import NewsPages from "./Components/Pages/NewsPages";
 import NotFound from "./Components/Pages/NotFound";
 import Footer from "./Components/Shear/Footer";
 import Header from "./Components/Shear/Header";
-import Loading from "./Components/Shear/Loading";
 import MixtapeSingle from "./Components/Pages/MixtapeSingle";
 import TabContent1 from "./Components/Pages/TabContent1";
 import TabContent2 from "./Components/Pages/TabContent2";
@@ -26,9 +25,9 @@ import EventOverview from "./Components/Pages/EventOverview";
 import EventHowToApply from "./Components/Pages/EventHowToApply";
 import EventTheProcess from "./Components/Pages/EventTheProcess";
 import AllEvent from "./Components/Pages/AllEvent";
-import VideoModal from "./Components/Shear/VideoModal";
 import Profile from "./Components/Dashboard/Profile";
 import SingleBlog from "./Components/Pages/SingleBlog";
+import YouTubeVideoVote from "./Components/Pages/YouTubeVideoVote";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -64,6 +63,7 @@ function App() {
             <Route path="/termsofuse" element={<Termsofuse />} />
             <Route path="/community" element={<Termsofuse />} />
             <Route path="/single_blog" element={<SingleBlog />} />
+            <Route path="/poll/youtube-video/" element={<YouTubeVideoVote />} />
             <Route path="/dmca-notice" element={<DmcaNotice />} />
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/events" element={<AllEvent />} />

@@ -5,6 +5,7 @@ import VideoModal from "../Shear/VideoModal";
 
 const TabContent2 = () => {
   const [open, setOpen] = useState(false);
+  const [title, setTitle] = useState("");
   const authentication = JSON.parse(localStorage.getItem("user"));
 
   return (
@@ -25,17 +26,16 @@ const TabContent2 = () => {
                     border: "none",
                     cursor: " pointer",
                   }}
-                  onClick={() => setOpen(true)}
+                  onClick={(e) => {
+                    setTitle(e.target.innerText);
+                    setOpen(true);
+                  }}
                   className="smt-c-item-title"
                 >
                   Our Belonging State of Mind ft. Mikal
                 </button>
               ) : (
-                <Link
-                  to="/login"
-                  onClick={() => setOpen(true)}
-                  className="smt-c-item-title"
-                >
+                <Link to="/login" className="smt-c-item-title">
                   Our Belonging State of Mind ft. Mikal
                 </Link>
               )}
@@ -51,17 +51,16 @@ const TabContent2 = () => {
                     border: "none",
                     cursor: " pointer",
                   }}
-                  onClick={() => setOpen(true)}
+                  onClick={(e) => {
+                    setTitle(e.target.innerText);
+                    setOpen(true);
+                  }}
                   className="smt-c-item-title"
                 >
                   Our Royal Seven ft. Amauri & Tacari
                 </button>
               ) : (
-                <Link
-                  to="/login"
-                  onClick={() => setOpen(true)}
-                  className="smt-c-item-title"
-                >
+                <Link to="/login" className="smt-c-item-title">
                   Our Royal Seven ft. Amauri & Tacari
                 </Link>
               )}
@@ -77,17 +76,16 @@ const TabContent2 = () => {
                     border: "none",
                     cursor: " pointer",
                   }}
-                  onClick={() => setOpen(true)}
+                  onClick={(e) => {
+                    setTitle(e.target.innerText);
+                    setOpen(true);
+                  }}
                   className="smt-c-item-title"
                 >
                   Our Beautiful Black Hair ft. Jewels, Shaniya, Tamia, & Asia
                 </button>
               ) : (
-                <Link
-                  to="/login"
-                  onClick={() => setOpen(true)}
-                  className="smt-c-item-title"
-                >
+                <Link to="/login" className="smt-c-item-title">
                   Our Beautiful Black Hair ft. Jewels, Shaniya, Tamia, & Asia
                 </Link>
               )}
@@ -103,17 +101,16 @@ const TabContent2 = () => {
                     border: "none",
                     cursor: " pointer",
                   }}
-                  onClick={() => setOpen(true)}
+                  onClick={(e) => {
+                    setTitle(e.target.innerText);
+                    setOpen(true);
+                  }}
                   className="smt-c-item-title"
                 >
                   Our Ruby Bridges ft. Fernanda & Tamya
                 </button>
               ) : (
-                <Link
-                  to="/login"
-                  onClick={() => setOpen(true)}
-                  className="smt-c-item-title"
-                >
+                <Link to="/login" className="smt-c-item-title">
                   Our Ruby Bridges ft. Fernanda & Tamya
                 </Link>
               )}
@@ -129,18 +126,17 @@ const TabContent2 = () => {
                     border: "none",
                     cursor: " pointer",
                   }}
-                  onClick={() => setOpen(true)}
+                  onClick={(e) => {
+                    setTitle(e.target.innerText);
+                    setOpen(true);
+                  }}
                   className="smt-c-item-title"
                 >
                   Our Family’s Secret Spelling Bee Strategy ft. Ariel, Frank,
                   and Dr. Kenya Dumas
                 </button>
               ) : (
-                <Link
-                  to="/login"
-                  onClick={() => setOpen(true)}
-                  className="smt-c-item-title"
-                >
+                <Link to="/login" className="smt-c-item-title">
                   Our Family’s Secret Spelling Bee Strategy ft. Ariel, Frank,
                   and Dr. Kenya Dumas
                 </Link>
@@ -157,24 +153,23 @@ const TabContent2 = () => {
                     border: "none",
                     cursor: " pointer",
                   }}
-                  onClick={() => setOpen(true)}
+                  onClick={(e) => {
+                    setTitle(e.target.innerText);
+                    setOpen(true);
+                  }}
                   className="smt-c-item-title"
                 >
                   Bonus Track: Our Hip-Hop Gems ft. Daniel
                 </button>
               ) : (
-                <Link
-                  to="/login"
-                  onClick={() => setOpen(true)}
-                  className="smt-c-item-title"
-                >
+                <Link to="/login" className="smt-c-item-title">
                   Bonus Track: Our Hip-Hop Gems ft. Daniel
                 </Link>
               )}
             </li>
           </ul>
         </div>
-        {open ? <VideoModal setOpen={setOpen} /> : ""}
+        {open ? <VideoModal title={title} setOpen={setOpen} /> : ""}
       </div>
     </>
   );

@@ -7,7 +7,7 @@ const EventTheProcess = () => {
   return (
     <>
       <p style={{ color: "#c4cfde" }}>
-        {convertHtmlToReact(event.the_process)}
+        {convertHtmlToReact(event?.the_process)}
       </p>
     </>
   );
