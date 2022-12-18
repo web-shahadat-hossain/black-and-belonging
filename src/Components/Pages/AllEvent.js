@@ -17,15 +17,9 @@ const AllEvent = () => {
   }, []);
   return (
     <>
-      <section className="news-header">
+      <section style={{ padding: "100px 0" }} className="news-section">
         <div className="container">
-          <h1>All Event</h1>
-        </div>
-      </section>
-
-      <section className="news-section">
-        <div className="container">
-          <h2>Event</h2>
+          <h2>Events</h2>
 
           <div className="news">
             {newsLoading ? (

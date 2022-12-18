@@ -28,6 +28,7 @@ import AllEvent from "./Components/Pages/AllEvent";
 import Profile from "./Components/Dashboard/Profile";
 import SingleBlog from "./Components/Pages/SingleBlog";
 import YouTubeVideoVote from "./Components/Pages/YouTubeVideoVote";
+import Success from "./Components/Pages/Success";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -58,6 +59,7 @@ function App() {
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/success" element={<Success />} />
             <Route path="/pop-up-shop" element={<Fundraise />} />
             <Route path="/cookiepolicy" element={<CookiePolicy />} />
             <Route path="/termsofuse" element={<Termsofuse />} />

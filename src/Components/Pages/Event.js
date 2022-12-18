@@ -5,13 +5,17 @@ import { useParams } from "react-router";
 import { Link, Outlet } from "react-router-dom";
 import { createContext } from "react";
 import Loading from "../Shear/Loading";
+import axios from "axios";
 export const EventNested = createContext("");
 const Event = () => {
   const [newsLoading, setNewsLoading] = useState(true);
-
+  const [form, setFrom] = useState({
+    title: "",
+    file: null,
+  });
   const [event, setEvent] = useState([]);
   const { id } = useParams();
-  console.log(event);
+
   const eventVideoID = event[0]?.youtube_link;
 
   useEffect(() => {
@@ -24,6 +28,46 @@ const Event = () => {
         setNewsLoading(false);
       });
   }, [id]);
+
+  const onChangeHandler = (e) => {
+    console.log(e.target.value);
+    // const inputValue =
+    //   e?.target?.name === "file" ? e?.target?.file[0] : e?.target?.value;
+    // console.log(inputValue, "hi");
+    setFrom({
+      ...form,
+      file: e?.target?.value,
+    });
+  };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+
+    // const videoData = new FormData(e.target);
+    const videoData = {
+      title: form.title,
+      videoFile: form.file,
+    };
+    // const result = Object.fromEntries(videoData.entries());
+    // videoData.append("title", form.title);
+    // videoData.append("videoFile", form.file);
+    // videoData.append("title")
+    console.log(videoData);
+    axios
+      .post("http://localhost:5000/upload", videoData)
+      .then((json) => console.log(json.data));
+
+    //   fetch("", {
+    //     method: "POST",
+    //     body: JSON.stringify(videoData),
+    //     headers: {
+    //       "Content-type": "application/json; charset=UTF-8",
+    //     },
+    //   })
+    //     .then((response) => response.json())
+    //     .then((json) => console.log(json));
+  };
+
   return (
     <>
       <section className="smt">
@@ -90,7 +134,7 @@ const Event = () => {
               </div>
             )}
             <div className="col-sm-right">
-              <form action="/" method="POST">
+              <form onSubmit={onSubmitHandler}>
                 <div className="contact-form-wrapper">
                   <div className="row">
                     <div className="col col-lg-6">
@@ -99,7 +143,7 @@ const Event = () => {
                         <span>
                           <input
                             type="text"
-                            name="your-name"
+                            name="firstName"
                             size="40"
                             id="contact-name"
                           />
@@ -113,7 +157,7 @@ const Event = () => {
                         <span>
                           <input
                             type="text"
-                            name="your-email"
+                            name="lastName"
                             size="40"
                             id="contact-email"
                           />
@@ -126,7 +170,7 @@ const Event = () => {
                         <span>
                           <input
                             type="email"
-                            name="your-name"
+                            name="email"
                             size="40"
                             id="contact-name"
                           />
@@ -140,7 +184,7 @@ const Event = () => {
                         <span>
                           <input
                             type="text"
-                            name="your-email"
+                            name="school"
                             size="40"
                             id="contact-email"
                           />
@@ -156,7 +200,7 @@ const Event = () => {
                         <span>
                           <input
                             type="text"
-                            name="your-phone"
+                            name="yourPhone"
                             size="40"
                             id="contact-phone"
                           />
@@ -168,8 +212,10 @@ const Event = () => {
                         <label for="contact-name">Video Title</label>
                         <span>
                           <input
-                            type="email"
-                            name="your-name"
+                            autoComplete="off"
+                            onChange={onChangeHandler}
+                            type="text"
+                            name="title"
                             size="40"
                             id="contact-name"
                           />
@@ -179,13 +225,14 @@ const Event = () => {
 
                     <div className="col col-lg-6">
                       <div className="form-group-file form-group">
-                        <label for="contact-email">Video upload</label>
+                        <label for="file">Video upload</label>
                         <span>
                           <input
+                            onChange={onChangeHandler}
                             type="file"
-                            name="your-email"
-                            size="40"
-                            id="contact-email"
+                            name="file"
+                            autoComplete="off"
+                            accept="video/mp4"
                           />
                         </span>
                       </div>

@@ -10,9 +10,6 @@ const YouTubeVideoVote = () => {
         <h1 className="it_epoll_title">
           <span className="it_epoll_title_exact">Microsoft Vs Apple</span>
           <span className="it_epoll_survey-stage">
-            <span className="it_epoll_stage it_epoll_live it_epoll_active">
-              Live
-            </span>
             <span
               className="it_epoll_stage it_epoll_ended it_epoll_active"
               style={{ display: "none" }}
@@ -44,9 +41,9 @@ const YouTubeVideoVote = () => {
                   allowfullscreen
                 ></iframe>
 
-                <div className="it_epoll_survey-name" style={{ color: "#fff" }}>
+                {/* <div className="it_epoll_survey-name" style={{ color: "#fff" }}>
                   YouTube
-                </div>
+                </div> */}
 
                 <div className="it_epoll_survey-item-action">
                   <form
@@ -121,9 +118,9 @@ const YouTubeVideoVote = () => {
                   allowfullscreen
                 ></iframe>
 
-                <div style={{ color: "#fff" }} className="it_epoll_survey-name">
+                {/* <div style={{ color: "#fff" }} className="it_epoll_survey-name">
                   YouTube
-                </div>
+                </div> */}
 
                 <div className="it_epoll_survey-item-action">
                   <form
@@ -182,7 +179,7 @@ const YouTubeVideoVote = () => {
           </ul>{" "}
           <div style={{ clear: "both" }}></div>
         </div>
-        <div className="it_epoll_powered_by">
+        {/* <div className="it_epoll_powered_by">
           <a
             href="https://wordpress.org/plugins/epoll-wp-voting/"
             target="blank"
@@ -190,7 +187,7 @@ const YouTubeVideoVote = () => {
           >
             Via WP Poll &amp; Voting System
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );
