@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Loading from "../Shear/Loading";
 
 const Mixtape = ({ data, Loadings, mixtapeOB }) => {
-  console.log(Loadings);
   return (
     <>
       <Link to="/mixtape-single" className="col">

@@ -11,7 +11,7 @@ const News = () => {
           <div className="news">
             <div className="row">
               {newsData.slice(0, 3).map((data) => (
-                <div className="col">
+                <div key={data.id} className="col">
                   <div className="news-content">
                     <div className="inner">
                       <div className="thumbnail">

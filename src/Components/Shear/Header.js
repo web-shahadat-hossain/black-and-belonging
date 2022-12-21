@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <>
       <header className Name="header-container">
-        <nav className={scroll ? `navbar scroll-on ` : `navbar`}>
+        <nav className={scroll ? "navbar scroll-on" : "navbar"}>
           <NavLink to="/" className="logo">
             <img src={logo} alt="logo" />
           </NavLink>
@@ -62,25 +62,6 @@ const Header = () => {
             </ul>
 
             <div className="right-menu">
-              {/* <a href="!#" className="favorites">
-                <i className="fa-regular fa-heart"></i>
-              </a> */}
-              {/* <div onClick={searchClickHandler} className="search-toggler">
-                <button style={{ backgroundColor: "transparent ", border: 0 }}>
-                  {" "}
-                  <i className="fa-solid fa-magnifying-glass"></i>
-                </button>
-                <div
-                  className={`togglesearch ${search ? "togglesearch2" : ""}`}
-                >
-                  <input type="search" name="search" placeholder="Search" />
-                  <button type="submit">
-                    {" "}
-                    <i className="fa fa-magnifying-glass"></i>{" "}
-                  </button>
-                </div>
-              </div> */}
-
               <div onClick={accountClickHandler} className="account">
                 <button style={{ backgroundColor: "transparent ", border: 0 }}>
                   <i className="fa fa-user"></i>
@@ -156,9 +137,9 @@ const Header = () => {
         <div className="menu-inner">
           <div className="menu-top">
             <div className="menu-header">
-              <a href="/" className="logo">
+              <Link to="/" className="logo">
                 <img src={logo} alt="logo" />
-              </a>
+              </Link>
 
               <div className="close-button">
                 <button
@@ -240,18 +221,7 @@ const Header = () => {
             </nav>
           </div>
 
-          <div className="right-menu right-menu-mob">
-            {/* <a href="!#">
-              <i className="fa fa-heart mob-favorites"></i>
-            </a>
-
-            <div className="togglesearch-mob">
-              <input type="search" name="search" placeholder="Search" />
-              <button type="submit">
-                <i className="fa fa-magnifying-glass"></i>
-              </button>
-            </div> */}
-          </div>
+          <div className="right-menu right-menu-mob"></div>
 
           <div className="signin">
             {authentication ? (

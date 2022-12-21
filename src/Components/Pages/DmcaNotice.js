@@ -4,11 +4,11 @@ import Separator from "../Shear/Separator";
 const DmcaNotice = () => {
   return (
     <>
-      <div class="terms-of-use">
-        <div class="container">
+      <div className="terms-of-use">
+        <div className="container">
           <h1>DMCA Notice</h1>
 
-          <div class="terms-content">
+          <div className="terms-content">
             <h4>DMCA NOTICE FOR COPYRIGHT CLAIMS</h4>
             <p>
               TPursuant to Title II of the DMCA, all claims alleging copyright

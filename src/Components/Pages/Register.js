@@ -172,8 +172,8 @@ const Register = () => {
 
                     <div className="col col-lg-6">
                       {buttonLoading ? (
-                        <button class="buttonload">
-                          <i class="fa fa-spinner fa-spin"></i>Loading
+                        <button className="buttonload">
+                          <i className="fa fa-spinner fa-spin"></i>Loading
                         </button>
                       ) : (
                         <input type="submit" value="REGISTER" />

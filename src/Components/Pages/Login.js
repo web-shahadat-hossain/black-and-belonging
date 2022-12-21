@@ -92,8 +92,11 @@ const Login = () => {
 
                     <div className="col col-lg-12">
                       {buttonLoading ? (
-                        <button style={{ width: "100%" }} class="buttonload">
-                          <i class="fa fa-spinner fa-spin"></i>Loading
+                        <button
+                          style={{ width: "100%" }}
+                          className="buttonload"
+                        >
+                          <i className="fa fa-spinner fa-spin"></i>Loading
                         </button>
                       ) : (
                         <input type="submit" value="LOGIN" />

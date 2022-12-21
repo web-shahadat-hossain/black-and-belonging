@@ -2,10 +2,16 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import VideoModal from "../Shear/VideoModal";
+import video1 from "../../Assets/video/Our-Belonging-State-of-Mind-1.mp4";
+import video2 from "../../Assets/video/Our-Royal-Seven-1.mp4";
+import video3 from "../../Assets/video/Our-Beautiful-Black-Hair-1.mp4";
+import video4 from "../../Assets/video/Our-Ruby-Bridges-1.mp4";
+import video5 from "../../Assets/video/Our-Familys-Secret-Spelling-Bee-Recipe-1.mp4";
+import video6 from "../../Assets/video/Our-Hip-Hop-Gems-Lil-Baby-Edition-1.mp4";
 
 const TabContent2 = () => {
   const [open, setOpen] = useState(false);
-  const [title, setTitle] = useState("");
+  const [data, setData] = useState({});
   const authentication = JSON.parse(localStorage.getItem("user"));
 
   return (
@@ -27,7 +33,7 @@ const TabContent2 = () => {
                     cursor: " pointer",
                   }}
                   onClick={(e) => {
-                    setTitle(e.target.innerText);
+                    setData({ title: e.target.innerText, video: video1 });
                     setOpen(true);
                   }}
                   className="smt-c-item-title"
@@ -52,7 +58,7 @@ const TabContent2 = () => {
                     cursor: " pointer",
                   }}
                   onClick={(e) => {
-                    setTitle(e.target.innerText);
+                    setData({ title: e.target.innerText, video: video2 });
                     setOpen(true);
                   }}
                   className="smt-c-item-title"
@@ -77,7 +83,7 @@ const TabContent2 = () => {
                     cursor: " pointer",
                   }}
                   onClick={(e) => {
-                    setTitle(e.target.innerText);
+                    setData({ title: e.target.innerText, video: video3 });
                     setOpen(true);
                   }}
                   className="smt-c-item-title"
@@ -102,7 +108,7 @@ const TabContent2 = () => {
                     cursor: " pointer",
                   }}
                   onClick={(e) => {
-                    setTitle(e.target.innerText);
+                    setData({ title: e.target.innerText, video: video4 });
                     setOpen(true);
                   }}
                   className="smt-c-item-title"
@@ -127,7 +133,7 @@ const TabContent2 = () => {
                     cursor: " pointer",
                   }}
                   onClick={(e) => {
-                    setTitle(e.target.innerText);
+                    setData({ title: e.target.innerText, video: video5 });
                     setOpen(true);
                   }}
                   className="smt-c-item-title"
@@ -154,7 +160,7 @@ const TabContent2 = () => {
                     cursor: " pointer",
                   }}
                   onClick={(e) => {
-                    setTitle(e.target.innerText);
+                    setData({ title: e.target.innerText, video: video6 });
                     setOpen(true);
                   }}
                   className="smt-c-item-title"
@@ -169,7 +175,7 @@ const TabContent2 = () => {
             </li>
           </ul>
         </div>
-        {open ? <VideoModal title={title} setOpen={setOpen} /> : ""}
+        {open ? <VideoModal data={data} setOpen={setOpen} /> : ""}
       </div>
     </>
   );

@@ -1,13 +1,13 @@
 import React from "react";
 import "../../Assets/Style/modal.css";
 
-const VideoModal = ({ setOpen, title }) => {
+const VideoModal = ({ setOpen, data }) => {
   return (
     <div className="modal_container show">
       <div className="modal">
         <div className="modal-box">
           <div>
-            <h1>{title}</h1>
+            <h1>{data.title}</h1>
             <button
               style={{
                 background: "transparent",
@@ -17,17 +17,12 @@ const VideoModal = ({ setOpen, title }) => {
               onClick={() => setOpen(false)}
               className="modal_close"
             >
-              <i class="fa-solid fa-xmark"></i>
+              <i className="fa-solid fa-xmark"></i>
             </button>
           </div>
-
-          <iframe
-            src="https://www.youtube.com/embed/FIy_cGkVgM8"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <video controls>
+            <source src={data.video} type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>

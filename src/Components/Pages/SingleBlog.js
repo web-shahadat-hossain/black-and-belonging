@@ -5,41 +5,41 @@ import blog from "../../Assets/images/blog.jpg";
 const SingleBlog = () => {
   return (
     <div>
-      <div class="blog-page">
-        <div class="container">
-          <h1 class="blog-title">
+      <div className="blog-page">
+        <div className="container">
+          <h1 className="blog-title">
             GO DJ! DIVINE NINE AND COLLEGE LEADERS SHOW BIG LOVE AT NEAL’S
             WELCOME BACK KICK-OFF
           </h1>
 
-          <div class="blog-details">
-            <div class="left">
-              <div class="details-item blog-published">
-                <i class="fa fa-clock"></i> September 6, 2022
+          <div className="blog-details">
+            <div className="left">
+              <div className="details-item blog-published">
+                <i className="fa fa-clock"></i> September 6, 2022
               </div>
 
-              <div class="details-item posted-by">
-                <i class="fa fa-user"></i> Posted by:{" "}
-                <span class="uploader">DeLeon Gray</span>
+              <div className="details-item posted-by">
+                <i className="fa fa-user"></i> Posted by:{" "}
+                <span className="uploader">DeLeon Gray</span>
               </div>
 
-              <div class="details-item blog-cat">
-                <i class="fa fa-flag"></i> Category:{" "}
-                <span class="cat-name">Liberting Practices</span>
+              <div className="details-item blog-cat">
+                <i className="fa fa-flag"></i> Category:{" "}
+                <span className="cat-name">Liberting Practices</span>
               </div>
             </div>
 
-            <a href="!#" class="blog-comments">
+            <a href="!#" className="blog-comments">
               {" "}
               No Comments
             </a>
           </div>
 
-          <div class="blog-img">
+          <div className="blog-img">
             <img src={blog} alt="" />
           </div>
 
-          <div class="blog-content">
+          <div className="blog-content">
             <p>
               Schools across North Carolina recently welcomed students back for
               the academic year, and the first-day experience at Neal Magnet
@@ -161,29 +161,29 @@ const SingleBlog = () => {
             </p>
           </div>
 
-          <div class="separator">
-            <div class="container">
-              <div class="divider"></div>
+          <div className="separator">
+            <div className="container">
+              <div className="divider"></div>
             </div>
           </div>
 
-          <div class="blog-comment-section">
-            <div class="login-form">
+          <div className="blog-comment-section">
+            <div className="login-form">
               <form action="/" method="POST">
-                <div class="login-form-wrapper">
+                <div className="login-form-wrapper">
                   <h3>Leave a Reply</h3>
 
-                  <div class="row">
-                    <div class="col col-lg-12">
-                      <div class="login-type">
-                        <a href="!#" class="google-login">
+                  <div className="row">
+                    <div className="col col-lg-12">
+                      <div className="login-type">
+                        <a href="!#" className="google-login">
                           <img src={google} alt="" /> Sign in with Google
                         </a>
                       </div>
                     </div>
 
-                    <div class="col col-lg-6">
-                      <div class="form-group">
+                    <div className="col col-lg-6">
+                      <div className="form-group">
                         <span>
                           <input
                             type="text"
@@ -197,8 +197,8 @@ const SingleBlog = () => {
                       </div>
                     </div>
 
-                    <div class="col col-lg-6">
-                      <div class="form-group">
+                    <div className="col col-lg-6">
+                      <div className="form-group">
                         <span>
                           <input
                             type="email"
@@ -212,8 +212,8 @@ const SingleBlog = () => {
                       </div>
                     </div>
 
-                    <div class="col col-lg-12">
-                      <div class="form-group">
+                    <div className="col col-lg-12">
+                      <div className="form-group">
                         <span>
                           <textarea
                             name="blog-message"
@@ -227,7 +227,7 @@ const SingleBlog = () => {
                       </div>
                     </div>
 
-                    <div class="col col-lg-6">
+                    <div className="col col-lg-6">
                       <input type="submit" value="Post Comment" />
                     </div>
                   </div>

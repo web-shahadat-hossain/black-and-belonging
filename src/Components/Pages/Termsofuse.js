@@ -4,11 +4,11 @@ import Separator from "../Shear/Separator";
 const Termsofuse = () => {
   return (
     <>
-      <div class="terms-of-use">
-        <div class="container">
+      <div className="terms-of-use">
+        <div className="container">
           <h1>Terms Of Use</h1>
 
-          <div class="terms-content">
+          <div className="terms-content">
             <p>
               These Terms of Use (hereinafter referred to as the “Terms” or
               “Terms &amp; Conditions” or “Terms of Service”) shall govern the
