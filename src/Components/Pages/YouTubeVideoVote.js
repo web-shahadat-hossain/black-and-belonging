@@ -37,13 +37,9 @@ const YouTubeVideoVote = () => {
                   src="https://www.youtube.com/embed/FIy_cGkVgM8"
                   title="YouTube video player"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; fullscreen;  autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>
-
-                {/* <div className="it_epoll_survey-name" style={{ color: "#fff" }}>
-                  YouTube
-                </div> */}
 
                 <div className="it_epoll_survey-item-action">
                   <form
@@ -101,26 +97,14 @@ const YouTubeVideoVote = () => {
             </li>
             <li className="it_epoll_survey-item">
               <div className="it_epoll_survey-item-inner it_epoll_card_front">
-                {/* <div className="it_epoll_big_cover">
-                  <img src={youtbeBanner} alt="" />
-                </div>
-
-                <div className="it_epoll_survey-country it_epoll_grid-only">
-                  <img src={youtbeLogo} alt="" />
-                  <div className="it_epoll_spinner"></div>
-                </div> */}
                 <iframe
                   width="100%"
                   src="https://www.youtube.com/embed/FIy_cGkVgM8"
                   title="YouTube video player"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; fullscreen;  autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>
-
-                {/* <div style={{ color: "#fff" }} className="it_epoll_survey-name">
-                  YouTube
-                </div> */}
 
                 <div className="it_epoll_survey-item-action">
                   <form
@@ -179,15 +163,6 @@ const YouTubeVideoVote = () => {
           </ul>{" "}
           <div style={{ clear: "both" }}></div>
         </div>
-        {/* <div className="it_epoll_powered_by">
-          <a
-            href="https://wordpress.org/plugins/epoll-wp-voting/"
-            target="blank"
-            rel="nofollow"
-          >
-            Via WP Poll &amp; Voting System
-          </a>
-        </div> */}
       </div>
     </section>
   );

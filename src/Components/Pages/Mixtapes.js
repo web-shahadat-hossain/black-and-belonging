@@ -16,7 +16,6 @@ const Mixtapes = () => {
       (res) =>
         res.json().then((data) => {
           setMactape(data);
-          isLoading(false);
         })
     );
   }, []);

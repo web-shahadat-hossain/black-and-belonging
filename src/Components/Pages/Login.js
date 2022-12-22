@@ -1,11 +1,35 @@
 import React, { useState } from "react";
 import Separator from "../Shear/Separator";
 import { Link, useNavigate } from "react-router-dom";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import auth from "../../FirebaseInit";
+import Loading from "../Shear/Loading";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
   const [buttonLoading, setButtonLoading] = useState(false);
+  /*******Google Sing Up code start here*******/
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
 
+  if (googleLoading) {
+    return <Loading />;
+  }
+
+  if (googleError) {
+    toast.error(googleError?.message);
+  }
+
+  if (googleUser) {
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ name: googleUser._tokenResponse.displayName })
+    );
+    navigate("/profile");
+  }
+
+  /*******Submit Handler  code start here*******/
   const handleLogin = async (e) => {
     setButtonLoading(true);
     e.preventDefault();
@@ -50,13 +74,16 @@ const Login = () => {
                     <div className="col col-lg-12">
                       <div className="login-type">
                         <p>Please choose from the sign in options below.</p>
-                        <a href="!#" className="google-login">
+                        <button
+                          onClick={() => signInWithGoogle()}
+                          className="google-login"
+                        >
                           <img
                             alt=""
                             src="https://codestuff.website/images/google.png"
                           />{" "}
                           Sign in with Google
-                        </a>
+                        </button>
                         <p>OR</p>
                         <p>Email or User ID</p>
                       </div>

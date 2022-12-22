@@ -3,10 +3,35 @@ import Separator from "../Shear/Separator";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import auth from "../../FirebaseInit";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import Loading from "../Shear/Loading";
 
 const Register = () => {
   const [buttonLoading, setButtonLoading] = useState(false);
   const navigate = useNavigate();
+
+  /*******Google Sing Up code start here*******/
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
+
+  if (googleLoading) {
+    return <Loading />;
+  }
+
+  if (googleError) {
+    toast.error(googleError?.message);
+  }
+
+  if (googleUser) {
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ name: googleUser._tokenResponse.displayName })
+    );
+    navigate("/profile");
+  }
+
+  /*******Submit Handler  code start here*******/
   const handleRegister = async (e) => {
     setButtonLoading(true);
     e.preventDefault();
@@ -35,14 +60,14 @@ const Register = () => {
       )
         .then((response) => response.json())
         .then((json) => {
-          if (json.status == 200) {
+          if (json.status === 200) {
             setButtonLoading(false);
             toast.success("Successfully Registration!");
             localStorage.setItem(
               "user",
               JSON.stringify({ name: userDetails.first_name })
             );
-            navigate("/login");
+            navigate("/profile");
           } else {
             setButtonLoading(false);
             toast.error("Please try again!");
@@ -161,13 +186,16 @@ const Register = () => {
                     </div>
 
                     <div className="col col-lg-6">
-                      <a href="!#" className="google-login">
+                      <button
+                        onClick={() => signInWithGoogle()}
+                        className="google-login"
+                      >
                         <img
                           src="https://codestuff.website/images/google.png"
                           alt=""
                         />{" "}
                         Sign in with Google
-                      </a>
+                      </button>
                     </div>
 
                     <div className="col col-lg-6">
