@@ -37,7 +37,7 @@ const Login = () => {
     const data = new FormData(e.target);
     const result = Object.fromEntries(data.entries());
     fetch(
-      `https://blackandbelonging.com/wp-json/custom-plugin/login?username=${result.loginEmail}&password=${result.loginPassword}`,
+      `https://api.blackandbelonging.com/wp-json/custom-plugin/login?username=${result.loginEmail}&password=${result.loginPassword}`,
       {
         method: "POST",
 

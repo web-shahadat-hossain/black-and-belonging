@@ -8,7 +8,9 @@ const AllEvent = () => {
   const [event, setEvent] = useState([]);
   const [newsLoading, setNewsLoading] = useState(true);
   useEffect(() => {
-    fetch("https://blackandbelonging.com/wp-json/637922eaa5/v2/kargetevents")
+    fetch(
+      "https://api.blackandbelonging.com/wp-json/637922eaa5/v2/kargetevents"
+    )
       .then((res) => res.json())
       .then((data) => {
         setEvent(data);

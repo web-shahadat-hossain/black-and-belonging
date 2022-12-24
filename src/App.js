@@ -29,6 +29,7 @@ import Profile from "./Components/Dashboard/Profile";
 import SingleBlog from "./Components/Pages/SingleBlog";
 import YouTubeVideoVote from "./Components/Pages/YouTubeVideoVote";
 import Success from "./Components/Pages/Success";
+import ScrollToTop from "./Components/Shear/ScrollToTop";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -43,10 +44,11 @@ function App() {
     <>
       {!loading && (
         <>
+          <ScrollToTop />
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/news" element={<NewsPages />} />
+            <Route ignoreScrollBehavior path="/news" element={<NewsPages />} />
             <Route path="/mixtapes" element={<Mixtapes />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

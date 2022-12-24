@@ -22,7 +22,7 @@ const Event = () => {
 
   useEffect(() => {
     fetch(
-      `https://blackandbelonging.com/wp-json/637922eaa5/v2/kargetevents?id=${id}`
+      `https://api.blackandbelonging.com/wp-json/637922eaa5/v2/kargetevents?id=${id}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -48,7 +48,10 @@ const Event = () => {
     };
     console.log(data);
     axios
-      .post("https://blackandbelonging.com/wp-json/custom-plugin/parti/", data)
+      .post(
+        "https://api.blackandbelonging.com/wp-json/custom-plugin/parti/",
+        data
+      )
       .then((json) => {
         if (json.status === 200) {
           toast.success("Successfully!");
@@ -204,16 +207,12 @@ const Event = () => {
 
                     <div className="col col-lg-12">
                       <div className="form-group">
-                        <label for="contact-phone">
-                          Name and Emails Of other group members
-                        </label>
+                        <label for="contact-phone">Your Message</label>
                         <span>
-                          <input
-                            type="text"
+                          <textarea
                             name="yourPhone"
-                            size="40"
                             id="contact-phone"
-                          />
+                          ></textarea>
                         </span>
                       </div>
                     </div>

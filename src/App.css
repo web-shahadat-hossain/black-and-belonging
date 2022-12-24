@@ -989,6 +989,7 @@ footer {
   box-shadow: var(--shadow-1);
   transition: 0.4s;
   position: relative;
+  font-family: var(--montserrat);
   z-index: 1;
   display: block;
   font-size: 16px;
@@ -1438,7 +1439,7 @@ footer .headline .divider {
 }
 
 .form-group textarea {
-  min-height: 216px;
+  min-height: 120px;
   background-color: #191b1e;
   border-radius: 6px;
   padding: 0;

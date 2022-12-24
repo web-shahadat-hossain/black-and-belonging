@@ -8,7 +8,7 @@ const MixtapeSingle = () => {
   const [mixtapeOB, setMactapeOB] = useState({});
   const [active, setInActive] = useState(false);
   useEffect(() => {
-    fetch("https://blackandbelonging.com/wp-json/wp/v2/media/10551").then(
+    fetch("https://api.blackandbelonging.com/wp-json/wp/v2/media/10551").then(
       (res) =>
         res.json().then((data) => {
           setMactapeOB(data);

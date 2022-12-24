@@ -5,7 +5,7 @@ const TabContent1 = () => {
   const [mixtape, setMactape] = useState([]);
 
   useEffect(() => {
-    fetch("https://blackandbelonging.com/wp-json/wp/v2/stm-courses").then(
+    fetch("https://api.blackandbelonging.com/wp-json/wp/v2/stm-courses").then(
       (res) =>
         res.json().then((data) => {
           setMactape(data);

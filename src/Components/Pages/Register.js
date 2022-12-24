@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import auth from "../../FirebaseInit";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import Loading from "../Shear/Loading";
+import { useEffect } from "react";
 
 const Register = () => {
   const [buttonLoading, setButtonLoading] = useState(false);
@@ -15,20 +16,70 @@ const Register = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
 
+  useEffect(() => {
+    if (googleUser) {
+      fetch(
+        "https://api.blackandbelonging.com/wp-json/custom-plugin/user_check/",
+        {
+          method: "POST",
+          body: JSON.stringify({ email: googleUser?.user?.email }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.id) {
+            navigate("/login");
+            toast.success("Already registered");
+          } else {
+            const name = googleUser?.user?.displayName.split(" ");
+            const userDetails = {
+              username: "addad",
+              password: "adasf",
+              email: googleUser?.user?.email,
+              first_name: name[0],
+              last_name: name[1],
+              role: "customer",
+            };
+            fetch(
+              "https://api.blackandbelonging.com/wp-json/637922eaa5/v2/adecreateuser",
+              {
+                method: "POST",
+                body: JSON.stringify(userDetails),
+                headers: {
+                  "Content-type": "application/json; charset=UTF-8",
+                },
+              }
+            )
+              .then((response) => response.json())
+              .then((json) => {
+                console.log(json);
+                if (json.status === 200) {
+                  setButtonLoading(false);
+                  toast.success("Successfully Registration!");
+                  // localStorage.setItem(
+                  //   "user",
+                  //   JSON.stringify({ name: userDetails.first_name })
+                  // );
+                  navigate("/login");
+                } else {
+                  setButtonLoading(false);
+                  toast.error("Please try again!");
+                }
+              });
+          }
+        });
+    }
+  }, [googleUser]);
+
   if (googleLoading) {
     return <Loading />;
   }
 
   if (googleError) {
     toast.error(googleError?.message);
-  }
-
-  if (googleUser) {
-    localStorage.setItem(
-      "user",
-      JSON.stringify({ name: googleUser._tokenResponse.displayName })
-    );
-    navigate("/profile");
   }
 
   /*******Submit Handler  code start here*******/
@@ -48,8 +99,9 @@ const Register = () => {
         last_name: result.last_name,
         role: "customer",
       };
+      console.log(userDetails);
       fetch(
-        "https://blackandbelonging.com/wp-json/637922eaa5/v2/adecreateuser",
+        "https://api.blackandbelonging.com/wp-json/637922eaa5/v2/adecreateuser",
         {
           method: "POST",
           body: JSON.stringify(userDetails),
@@ -63,11 +115,11 @@ const Register = () => {
           if (json.status === 200) {
             setButtonLoading(false);
             toast.success("Successfully Registration!");
-            localStorage.setItem(
-              "user",
-              JSON.stringify({ name: userDetails.first_name })
-            );
-            navigate("/profile");
+            // localStorage.setItem(
+            //   "user",
+            //   JSON.stringify({ name: userDetails.first_name })
+            // );
+            navigate("/login");
           } else {
             setButtonLoading(false);
             toast.error("Please try again!");
