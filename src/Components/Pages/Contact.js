@@ -1,5 +1,6 @@
 import React from "react";
 import contact from "../../Assets/images/contact.jpg";
+import Separator from "../Shear/Separator";
 
 const Contact = () => {
   return (
@@ -9,13 +10,9 @@ const Contact = () => {
           <h1>Contact Us</h1>
 
           <div className="contact-area">
-            <div className="contact-info">
+            {/* <div className="contact-info">
               <div className="contact-info-area">
                 <h3>Let’s Stay In Touch!</h3>
-
-                {/* <div className="thumbnail">
-                  <img src={contact} alt="" />
-                </div> */}
 
                 <ul className="contact-list">
                   <li>
@@ -96,9 +93,9 @@ const Contact = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> */}
 
-            <div className="contact-form">
+            {/* <div className="contact-form">
               <form action="/" method="POST">
                 <div className="contact-form-wrapper">
                   <div className="row">
@@ -150,10 +147,84 @@ const Contact = () => {
                   </div>
                 </div>
               </form>
+            </div> */}
+
+            <div className="contact_pages_card_container">
+              <div className="contact_pages_card">
+                <div>
+                  <a
+                    target="black"
+                    href="https://contact@blackandbelonging.com"
+                  >
+                    <i class="fa-solid fa-envelope"></i>
+                  </a>
+                </div>
+                <h4>Email</h4>
+                <p>
+                  <a
+                    target="black"
+                    href="https://contact@blackandbelonging.com"
+                  >
+                    contact@blackandbelonging.com
+                  </a>
+                </p>
+              </div>
+              <div className="contact_pages_card">
+                <div>
+                  <a target="black" href="https://twitter.com/HeartBelonging">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                </div>
+                <h4>Twitter</h4>
+                <p>
+                  <a target="black" href="https://twitter.com/HeartBelonging">
+                    @HeartBelonging
+                  </a>
+                </p>
+              </div>
+              <div className="contact_pages_card">
+                <div>
+                  <a
+                    target="black"
+                    href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q"
+                  >
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </div>
+                <h4>YouTube</h4>
+                <p>
+                  <a
+                    target="black"
+                    href="https://www.youtube.com/channel/UCzgAKVLce6G2N8QUHTEbs-Q"
+                  >
+                    HeartBelonging
+                  </a>
+                </p>
+              </div>
+              <div className="contact_pages_card">
+                <div>
+                  <a
+                    target="black"
+                    href="https://www.instagram.com/heartbelonging/"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </div>
+                <h4>Instagram</h4>
+                <p>
+                  <a
+                    target="black"
+                    href="https://www.instagram.com/heartbelonging/"
+                  >
+                    @HeartBelonging
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <Separator />
     </>
   );
 };

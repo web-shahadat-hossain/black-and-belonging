@@ -8,7 +8,9 @@ const EventOverview = () => {
 
   return (
     <>
-      <p style={{ color: "#c4cfde" }}>{convertHtmlToReact(event?.overview)}</p>
+      <p style={{ color: "#c4cfde", lineHeight: 1.5 }}>
+        {convertHtmlToReact(event?.overview)}
+      </p>
     </>
   );
 };

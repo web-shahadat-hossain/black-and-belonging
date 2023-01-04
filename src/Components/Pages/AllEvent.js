@@ -3,9 +3,11 @@ import Loading from "../Shear/Loading";
 import UseNews from "../../Hook/UseNews";
 import convertHtmlToReact from "@hedgedoc/html-to-react";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 const AllEvent = () => {
   const [event, setEvent] = useState([]);
+  console.log(event);
   const [newsLoading, setNewsLoading] = useState(true);
   useEffect(() => {
     fetch(
@@ -33,7 +35,7 @@ const AllEvent = () => {
                     <div className="news-content">
                       <div className="inner">
                         <div className="thumbnail">
-                          <a href="#!">
+                          <Link to={`/events/${data?.slug}`}>
                             <iframe
                               width="100%"
                               height="100%"
@@ -45,30 +47,36 @@ const AllEvent = () => {
                               allow="accelerometer; fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                               allowfullscreen
                             ></iframe>
-                          </a>
+                          </Link>
                         </div>
                         <div className="content">
                           <h4 className="title">
                             <Link
                               style={{ textTransform: "capitalize" }}
-                              to={`/event/${data?.event_id}`}
+                              to={`/events/${data?.slug}`}
                             >
                               {" "}
                               {data?.title}
                             </Link>
                           </h4>
                           <div className="events-date">
-                            <div>
-                              <h4>START</h4>
-                              <p>{data.event_start}</p>
-                            </div>
-                            <div>
-                              <h4>END</h4>
-                              <p>{data.event_end}</p>
-                            </div>
-                            <div>
-                              <h4>LOCATION</h4>
-                              <p>{data.event_location}</p>
+                            <div className="events-date-box">
+                              <div className="events-date-start">
+                                <h4>START</h4>
+                                <p>
+                                  {moment(data.event_start).format("MMM Do YY")}
+                                </p>
+                              </div>
+                              <div className="events-date-end">
+                                <h4>END</h4>
+                                <p>
+                                  {moment(data.event_end).format("MMM Do YY")}
+                                </p>
+                              </div>
+                              <div className="events-date-box-location">
+                                <h4>LOCATION</h4>
+                                <p>{data.event_location}</p>
+                              </div>
                             </div>
                           </div>
                           <p className="desc">
@@ -78,7 +86,7 @@ const AllEvent = () => {
                             aliquam!
                           </p>
                           <Link
-                            to={`/event/${data?.event_id}`}
+                            to={`/events/${data?.slug}`}
                             className="read-btn"
                           >
                             Join Now! <i className="fas fa-caret-right"></i>

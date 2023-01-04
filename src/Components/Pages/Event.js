@@ -7,22 +7,19 @@ import { createContext } from "react";
 import Loading from "../Shear/Loading";
 import axios from "axios";
 import { toast } from "react-toastify";
+import moment from "moment";
 export const EventNested = createContext("");
 const Event = () => {
+  const [buttonLoading, setButtonLoading] = useState(false);
   const [newsLoading, setNewsLoading] = useState(true);
   const [event, setEvent] = useState([]);
   const [active, setInActive] = useState("Overview");
-  const [selectVideo, setSelectVideo] = useState("");
   const { id } = useParams();
   const eventVideoID = event[0]?.youtube_link;
-
-  const videoHandler = (e) => {
-    setSelectVideo(e.target.files[0]);
-  };
-
+  console.log(event);
   useEffect(() => {
     fetch(
-      `https://api.blackandbelonging.com/wp-json/637922eaa5/v2/kargetevents?id=${id}`
+      `https://api.blackandbelonging.com/wp-json/637922eaa5/v2/kargetevents?slug=${id}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -32,6 +29,7 @@ const Event = () => {
   }, [id]);
 
   const onSubmitHandler = (e) => {
+    setButtonLoading(true);
     e.preventDefault();
 
     const videoData = new FormData(e.target);
@@ -43,10 +41,9 @@ const Event = () => {
       school: result?.school,
       name_and_emails_of_other_group_members: result?.yourPhone,
       video_title: result?.title,
-      video_upload: window.URL.createObjectURL(selectVideo),
-      event_id: id,
+      video_upload: result?.video,
     };
-    console.log(data);
+
     axios
       .post(
         "https://api.blackandbelonging.com/wp-json/custom-plugin/parti/",
@@ -54,9 +51,13 @@ const Event = () => {
       )
       .then((json) => {
         if (json.status === 200) {
-          toast.success("Successfully!");
+          toast.success("Submitted Successfully!");
+          setButtonLoading(false);
+          e.target.reset();
         } else {
           toast.error("Please try again!");
+          setButtonLoading(false);
+          e.target.reset();
         }
       });
   };
@@ -89,11 +90,11 @@ const Event = () => {
                 <div className="event-date">
                   <div>
                     <h4>START</h4>
-                    <p>{event[0]?.event_start}</p>
+                    <p>{moment(event[0]?.event_start).format("MMM Do YY")} </p>
                   </div>
                   <div>
                     <h4>END</h4>
-                    <p>{event[0]?.event_end}</p>
+                    <p>{moment(event[0]?.event_end).format("MMM Do YY")} </p>
                   </div>
                   <div>
                     <h4>LOCATION</h4>
@@ -108,7 +109,7 @@ const Event = () => {
                         className={` ${
                           active === "Overview" ? "event-active" : ""
                         }`}
-                        to={`/event/${id}`}
+                        to={`/events/${id}`}
                       >
                         Overview
                       </Link>
@@ -120,7 +121,7 @@ const Event = () => {
                           active === "apply" ? `event-active` : ""
                         }`}
                         onClick={(e) => setInActive("apply")}
-                        to={`/event/${id}/how-to-apply`}
+                        to={`/events/${id}/how-to-apply`}
                       >
                         How to Apply
                       </Link>
@@ -131,7 +132,7 @@ const Event = () => {
                         className={` ${
                           active === "The Process" ? "event-active" : ""
                         }`}
-                        to={`/event/${id}/the-process`}
+                        to={`/events/${id}/the-process`}
                       >
                         The Process
                       </Link>
@@ -155,6 +156,7 @@ const Event = () => {
                         <label for="contact-name">First Name</label>
                         <span>
                           <input
+                            required
                             type="text"
                             name="firstName"
                             size="40"
@@ -169,6 +171,7 @@ const Event = () => {
                         <label for="contact-email">Last Name</label>
                         <span>
                           <input
+                            required
                             type="text"
                             name="lastName"
                             size="40"
@@ -182,6 +185,7 @@ const Event = () => {
                         <label for="contact-name">Email</label>
                         <span>
                           <input
+                            required
                             type="email"
                             name="email"
                             size="40"
@@ -196,6 +200,7 @@ const Event = () => {
                         <label for="contact-email">School</label>
                         <span>
                           <input
+                            required
                             type="text"
                             name="school"
                             size="40"
@@ -207,9 +212,12 @@ const Event = () => {
 
                     <div className="col col-lg-12">
                       <div className="form-group">
-                        <label for="contact-phone">Your Message</label>
+                        <label for="contact-phone">
+                          Names and emails of other group members{" "}
+                        </label>
                         <span>
                           <textarea
+                            required
                             name="yourPhone"
                             id="contact-phone"
                           ></textarea>
@@ -221,6 +229,7 @@ const Event = () => {
                         <label for="contact-name">Video Title</label>
                         <span>
                           <input
+                            required
                             autoComplete="off"
                             type="text"
                             name="title"
@@ -231,7 +240,7 @@ const Event = () => {
                       </div>
                     </div>
 
-                    <div className="col col-lg-6">
+                    {/* <div className="col col-lg-6">
                       <div className="form-group-file form-group">
                         <label for="file">Video upload</label>
                         <span>
@@ -239,15 +248,39 @@ const Event = () => {
                             onChange={videoHandler}
                             type="file"
                             name="file"
-                            // autoComplete="off"
+                            autoComplete="off"
                             accept="video/mp4"
+                          />
+                        </span>
+                      </div>
+                    </div> */}
+                    <div className="col col-lg-6">
+                      <div className="form-group">
+                        <label for="contact-name">YOUTUBE VIDEO LINK</label>
+                        <span>
+                          <input
+                            required
+                            autoComplete="off"
+                            type="text"
+                            name="video"
+                            size="40"
+                            id="contact-name"
                           />
                         </span>
                       </div>
                     </div>
 
                     <div className="col col-lg-12">
-                      <input type="submit" value="JOIN NOW!" />
+                      {buttonLoading ? (
+                        <button
+                          style={{ width: "100%" }}
+                          className="buttonload"
+                        >
+                          <i className="fa fa-spinner fa-spin"></i>Loading
+                        </button>
+                      ) : (
+                        <input type="submit" value="JOIN NOW!" />
+                      )}
                     </div>
                   </div>
                 </div>

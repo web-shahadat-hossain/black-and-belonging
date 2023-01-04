@@ -562,7 +562,7 @@ const Termsofuse = () => {
                 <strong>Email: </strong>contact@blackandbelonging.com{" "}
               </li>
               <li>
-                <strong>Contact: </strong>919-443-5029
+                <strong>Contact: </strong>(919) 593-7730
               </li>
               <li>
                 <strong>Feedback and Information: </strong>We welcome your

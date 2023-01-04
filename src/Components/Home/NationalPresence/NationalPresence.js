@@ -11,7 +11,7 @@ const NationalPresence = () => {
             We help structure learning environments where students feel
             accepted, respected, included and supported.
           </h1>
-          <span className="what-we-do-span">National Presence</span>
+          {/* <span className="what-we-do-span">National Presence</span> */}
 
           <div className="achievements">
             <div className="row">

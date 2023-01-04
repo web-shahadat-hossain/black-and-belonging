@@ -30,6 +30,8 @@ import SingleBlog from "./Components/Pages/SingleBlog";
 import YouTubeVideoVote from "./Components/Pages/YouTubeVideoVote";
 import Success from "./Components/Pages/Success";
 import ScrollToTop from "./Components/Shear/ScrollToTop";
+import PollList from "./Components/Pages/PollList";
+import RequireAuth from "./RequireAuth";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -44,11 +46,13 @@ function App() {
     <>
       {!loading && (
         <>
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route ignoreScrollBehavior path="/news" element={<NewsPages />} />
+            <Route path="/news/:id" element={<SingleBlog />} />
+
             <Route path="/mixtapes" element={<Mixtapes />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
@@ -56,7 +60,11 @@ function App() {
               <Route path="/mixtape-single" element={<TabContent1 />} />
               <Route
                 path="/mixtape-single/tracklist"
-                element={<TabContent2 />}
+                element={
+                  <RequireAuth>
+                    <TabContent2 />
+                  </RequireAuth>
+                }
               />
             </Route>
             <Route path="/login" element={<Login />} />
@@ -66,19 +74,19 @@ function App() {
             <Route path="/cookiepolicy" element={<CookiePolicy />} />
             <Route path="/termsofuse" element={<Termsofuse />} />
             <Route path="/community" element={<Termsofuse />} />
-            <Route path="/single_blog" element={<SingleBlog />} />
-            <Route path="/poll/youtube-video/" element={<YouTubeVideoVote />} />
             <Route path="/dmca-notice" element={<DmcaNotice />} />
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/events" element={<AllEvent />} />
-            <Route path="/event/:id" element={<Event />}>
-              <Route path="/event/:id" element={<EventOverview />} />
+            <Route path="/poll-list" element={<PollList />} />
+            <Route path="/poll-list/:id" element={<YouTubeVideoVote />} />
+            <Route path="/events/:id" element={<Event />}>
+              <Route path="/events/:id" element={<EventOverview />} />
               <Route
-                path="/event/:id/how-to-apply"
+                path="/events/:id/how-to-apply"
                 element={<EventHowToApply />}
               />
               <Route
-                path="/event/:id/the-process"
+                path="/events/:id/the-process"
                 element={<EventTheProcess />}
               />
             </Route>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Separator from "../Shear/Separator";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../FirebaseInit";
 import Loading from "../Shear/Loading";
@@ -8,6 +8,10 @@ import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
   const [buttonLoading, setButtonLoading] = useState(false);
   /*******Google Sing Up code start here*******/
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -26,7 +30,7 @@ const Login = () => {
       "user",
       JSON.stringify({ name: googleUser._tokenResponse.displayName })
     );
-    navigate("/profile");
+    navigate(from, { replace: true });
   }
 
   /*******Submit Handler  code start here*******/
@@ -49,7 +53,7 @@ const Login = () => {
       .then((response) => response.json())
       .then((json) => {
         setButtonLoading(false);
-        navigate("/");
+        navigate(from, { replace: true });
 
         localStorage.setItem(
           "user",
@@ -130,14 +134,18 @@ const Login = () => {
                       )}
                       <p className="signin-term">
                         By signing in, you agree to our
-                        <a href="!#">Terms of Use.</a>
+                        <Link style={{ marginLeft: "10px" }} to="/termsofuse">
+                          Terms of Use.
+                        </Link>
                       </p>
                     </div>
 
                     <div className="col col-lg-12">
                       <p className="login-to-register">
                         New to Black and Belonging?
-                        <Link to="/register">Create an account.</Link>
+                        <Link style={{ marginLeft: "10px" }} to="/register">
+                          Create an account.
+                        </Link>
                       </p>
                     </div>
                   </div>

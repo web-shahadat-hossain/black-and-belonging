@@ -1,123 +1,33 @@
-import img1 from "../Assets/images/news/news1.jpg";
-import img2 from "../Assets/images/news/news2.jpeg";
-import img3 from "../Assets/images/news/news3.jpg";
-import img4 from "../Assets/images/news/news4.jpg";
-import img5 from "../Assets/images/news/news5.jpg";
-import img6 from "../Assets/images/news/news6.jpg";
-import img7 from "../Assets/images/news/news7.jpeg";
-import img8 from "../Assets/images/news/news8.jpg";
-import img9 from "../Assets/images/news/news9.jpg";
-import img10 from "../Assets/images/news/news10.jpg";
-import img11 from "../Assets/images/news/news11.jpg";
-import img12 from "../Assets/images/news/news12.jpg";
+import img1 from "../Assets/images/news/n1.jpg";
+import img2 from "../Assets/images/news/n2.jpg";
+import img3 from "../Assets/images/news/n3.jpg";
 
 export const newsData = [
   {
-    title: "Go DJ! Divine Nine and College Leaders Show Big Love at Neal’s ...",
+    title:
+      "One Professor’s Take on Why Mikal Ali is Worth Every Penny of His Full Ride to Duke",
     description:
-      "Schools across North Carolina recently welcomed students back for the academic year, and the first-day experience at Neal Magnet Middle School was one for the",
-    image:
-      "https://staging.blackandbelonging.com/static/media/news1.b83ea7594effee3fad6a.jpg",
-    date: "September 6, 2022",
-    id: 1,
+      "After learning that Black and Belonging Fellow Mikal Ali earned a full-ride scholarship to Duke University, the Hillside High School community has been buzzing ever since. There’s a lot to love about this farmer, athlete, scholar, stock-market enthusiast, and public speaker. Here, I share a just a few of the professional observations I’ve made since",
+
+    image: img1,
+    date: "Monday, December 19, 2022 7:39 AM",
+    id: 10934,
   },
   {
-    title: "How Frank Dumas Made a Name For Himself at 10-Years Old",
+    title: "Blackout for Black Panther II = Unforgettable",
     description:
-      "Frank Dumas IV recently participated in the Scripps National Spelling Bee, representing North Carolina, the Duke Office of Durham and Community Affairs, and Bethesda Elementary",
-    image:
-      "https://staging.blackandbelonging.com/static/media/news2.80664b7d27ba96f04d7b.jpeg",
-    date: "August 31, 2022",
-    id: 2,
-  },
-  {
-    title: "thumbnail Belonging Helps Black, Latino Students Feel Engaged",
-    description:
-      "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
-    image:
-      "https://staging.blackandbelonging.com/static/media/news3.b1d192cc7824e2185c06.jpg",
-    date: "August 24, 2022",
-    id: 3,
+      "A group of Black and Belonging Youth Fellows hosted a private screening of Black Panther II for friends, family members, community members, and educators. This was far from your ordinary movie experience. Imagine entering the movie theater. The concession stand to your left is being run by theater staff members who are selling popcorn, water,",
+    image: img2,
+    date: "Sunday, November 13, 2022 6:50 AM",
+    id: 10928,
   },
   {
     title:
-      "How a Student Organization Is Building a Memorial for Victims of Lynching",
+      "Go DJ! Divine Nine and College Leaders Show Big Love at Neal’s Welcome Back Kick-Off",
     description:
-      "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
-    image: img4,
-    date: "August 24, 2022",
-    id: 4,
-  },
-  {
-    title:
-      "Spotlighting Powerful Young Voices Driving Systemic Change in Durham",
-    description:
-      "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
-    image: img5,
-    date: "August 24, 2022",
-    id: 5,
-  },
-  {
-    title:
-      "After California, Our Time is Now: Kia Allah on Making Ethnic Studies a Graduation Requirement in North Carolina",
-    description:
-      "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
-    image: img6,
-    date: "August 24, 2022",
-    id: 6,
-  },
-  {
-    title:
-      "The State of Education: A New Podcast is Amplifying the Voices of Black Educators",
-    description:
-      "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
-    image: img7,
-    date: "August 24, 2022",
-    id: 7,
-  },
-  {
-    title:
-      "Why is it Important for Students to Feel a Sense of Belonging at School? ‘Students Choose to be in Environments That Make Them Feel a Sense of Fit,’ Says Associate Professor DeLeon Gray",
-    description:
-      "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
-    image: img8,
-    date: "August 24, 2022",
-    id: 8,
-  },
-  {
-    title:
-      "thumbnail Throwing Breadcrumbs at Our Feet and Fuel in the Fire by Sarah Elliott (High School Senior)",
-    description:
-      "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
-    image: img9,
-    date: "August 24, 2022",
-    id: 9,
-  },
-  {
-    title:
-      "High School Freshman Creates Lapel Pin to Spark Dialogue on Black Hair",
-    description:
-      "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
-    image: img10,
-    date: "August 24, 2022",
-    id: 10,
-  },
-  {
-    title:
-      "thumbnail Educators, Scholars, and Lawyers Team Up to Fill Gaps in History Books",
-    description:
-      "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
-    image: img11,
-    date: "August 24, 2022",
-    id: 11,
-  },
-  {
-    title:
-      "Award-Winning Article Focuses on What It Means for Black Students to Belong at School",
-    description:
-      "A new study found that a group of predominantly Black and Latino sixth-graders reported they were more likely to pay attention, work hard and participate",
-    image: img12,
-    date: "August 24, 2022",
-    id: 12,
+      "Schools across North Carolina recently welcomed students back for the academic year, and the first-day experience at Neal Magnet Middle School was one for the books! At all started with a DJ and Soul Train style walkway welcoming students to campus. Students were greeted with cheers and positive words of affirmation by members of the",
+    image: img3,
+    date: "Tuesday, September 6, 2022 5:44 AM",
+    id: 10591,
   },
 ];

@@ -25,15 +25,15 @@ const Footer = () => {
               <h3>Popular Mixtapes</h3>
 
               <div className="tape">
-                <a href="mixtape_single.html">
+                <Link to="/mixtape-single">
                   <img src={tape} alt="" />
-                </a>
+                </Link>
 
                 <div className="tape-content">
                   <h5>
-                    <a href="mixtape_single.html">
+                    <Link to="/mixtape-single">
                       Heart Belonging Mixtape Vol.1: Hoo...
-                    </a>
+                    </Link>
                   </h5>
                   <p>By DeLeon Gray</p>
                 </div>
@@ -58,12 +58,12 @@ const Footer = () => {
                 <li>
                   <Link to="contact">Contact Us</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="pop-up-shop">Pop Up Shop</Link>
                 </li>
                 <li>
                   <Link to="/events">Events</Link>
-                </li>
+                </li> */}
               </ul>
             </div>
 

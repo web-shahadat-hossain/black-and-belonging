@@ -53,9 +53,9 @@ const Header = () => {
               <li>
                 <NavLink to="about">ABOUT US</NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="/events">Events</NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to="contact">CONTACT US</NavLink>
               </li>
@@ -196,7 +196,7 @@ const Header = () => {
                     <NavLink to="about">About Us</NavLink>
                   </li>
                 </button>
-                <button
+                {/* <button
                   style={{ backgroundColor: "transparent ", border: 0 }}
                   className="close"
                   id="close"
@@ -205,7 +205,7 @@ const Header = () => {
                   <li>
                     <NavLink to="/events">Events</NavLink>
                   </li>
-                </button>
+                </button> */}
 
                 <button
                   style={{ backgroundColor: "transparent ", border: 0 }}

@@ -55,18 +55,13 @@ const Register = () => {
             )
               .then((response) => response.json())
               .then((json) => {
-                console.log(json);
-                if (json.status === 200) {
+                if (json.status === "200") {
                   setButtonLoading(false);
                   toast.success("Successfully Registration!");
-                  // localStorage.setItem(
-                  //   "user",
-                  //   JSON.stringify({ name: userDetails.first_name })
-                  // );
                   navigate("/login");
                 } else {
                   setButtonLoading(false);
-                  toast.error("Please try again!");
+                  toast.error(json?.error?.errors?.existing_user_login[0]);
                 }
               });
           }
@@ -99,7 +94,7 @@ const Register = () => {
         last_name: result.last_name,
         role: "customer",
       };
-      console.log(userDetails);
+
       fetch(
         "https://api.blackandbelonging.com/wp-json/637922eaa5/v2/adecreateuser",
         {
@@ -112,17 +107,14 @@ const Register = () => {
       )
         .then((response) => response.json())
         .then((json) => {
-          if (json.status === 200) {
+          if (json.status === "200") {
             setButtonLoading(false);
             toast.success("Successfully Registration!");
-            // localStorage.setItem(
-            //   "user",
-            //   JSON.stringify({ name: userDetails.first_name })
-            // );
+
             navigate("/login");
           } else {
             setButtonLoading(false);
-            toast.error("Please try again!");
+            toast.error(json?.error?.errors?.existing_user_login[0]);
           }
         });
     } else {

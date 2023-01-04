@@ -2,21 +2,23 @@ import React from "react";
 import Loading from "../Shear/Loading";
 import UseNews from "../../Hook/UseNews";
 import convertHtmlToReact from "@hedgedoc/html-to-react";
+import moment from "moment";
+import { Link } from "react-router-dom";
 
 const NewsPages = () => {
   const [news, newsLoading] = UseNews();
-
+  console.log(news);
   return (
     <>
       <section className="news-header">
         <div className="container">
-          <h1>Latest News</h1>
+          <h1>Newsroom</h1>
         </div>
       </section>
 
       <section className="news-section">
         <div className="container">
-          <h2>News</h2>
+          {/* <h2>News</h2> */}
 
           <div className="news">
             {newsLoading ? (
@@ -28,27 +30,29 @@ const NewsPages = () => {
                     <div className="news-content">
                       <div className="inner">
                         <div className="thumbnail">
-                          <a href="#!">
+                          <Link to={`/news/${data.slug}`}>
                             <img src={data?.fimg_url} alt="thumbnail" />
-                          </a>
+                          </Link>
                         </div>
                         <div className="content">
                           <h4 className="title">
-                            <a href="#!">
+                            <Link to={`/news/${data.slug}`}>
                               {convertHtmlToReact(
                                 data?.title?.rendered.slice(0, 100)
                               )}
                               ...
-                            </a>
+                            </Link>
                           </h4>
                           <p className="desc">
                             {convertHtmlToReact(data?.excerpt?.rendered)}
                           </p>
-                          <a href={data?.link} className="read-btn">
+                          <Link to={`/news/${data.slug}`} className="read-btn">
                             Read More <i className="fas fa-caret-right"></i>
-                          </a>
+                          </Link>
 
-                          <p className="date-published">{data?.date}</p>
+                          <p className="date-published">
+                            {moment(data?.date).format("LLLL")}{" "}
+                          </p>
                         </div>
                       </div>
                     </div>

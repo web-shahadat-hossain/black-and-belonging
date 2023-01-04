@@ -2,7 +2,7 @@ import React from "react";
 import Article from "./Article";
 import HeroSection from "./HeroSection";
 
-import HomepageAbout from "./HomepageAbout";
+// import HomepageAbout from "./HomepageAbout";
 
 import NationalPresence from "./NationalPresence/NationalPresence";
 import News from "./News";
@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <HeroSection />
       <NationalPresence />
-      <HomepageAbout />
+      {/* <HomepageAbout /> */}
       <News />
       <Article />
     </>

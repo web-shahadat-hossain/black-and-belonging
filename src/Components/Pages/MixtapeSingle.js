@@ -59,7 +59,7 @@ const MixtapeSingle = () => {
                 <li>
                   <i className="fa-solid fa-people-group"></i>
                   <p>
-                    <strong>Enrolled:</strong> 84 Students
+                    <strong>Enrolled:</strong> 109 Students
                   </p>
                 </li>
 
@@ -78,23 +78,23 @@ const MixtapeSingle = () => {
               <div className="nav-tabs-wrapper">
                 <ul className="nav-tabs">
                   <li onClick={() => setInActive(false)}>
-                    <Link
+                    <NavLink
                       to="/mixtape-single"
                       className={`tab-item ${active ? "" : "tab-active"}`}
                       id="tab-1"
                     >
                       Description
-                    </Link>
+                    </NavLink>
                   </li>
 
                   <li onClick={() => setInActive(true)}>
-                    <Link
+                    <NavLink
                       to="/mixtape-single/tracklist"
                       className={`tab-item ${active ? "tab-active" : ""}`}
                       id="tab-2"
                     >
                       Tracklist
-                    </Link>
+                    </NavLink>
                   </li>
                 </ul>
               </div>

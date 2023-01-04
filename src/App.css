@@ -1281,10 +1281,11 @@ footer .headline .divider {
 .contact-info .contact-info-area .contact-list li a i {
   font-size: 28px;
 }
-.contact-list .contact-details h4 {
+.contact_pages_card h4 {
   color: #f1f1f1;
   font-size: 20px;
   margin-bottom: 7px;
+  margin-top: 30px;
 }
 
 .contact-form,
@@ -1397,7 +1398,7 @@ footer .headline .divider {
 }
 
 .form-group label {
-  font-size: 12px;
+  font-size: 11px;
   color: #a0a8b3;
   font-weight: 500;
   letter-spacing: 1px;
@@ -1456,8 +1457,7 @@ footer .headline .divider {
   width: 100%;
 }
 .contact-form-wrapper input[type="submit"],
-.login-form-wrapper input[type="submit"],
-.login-form-wrapper .google-login {
+.login-form-wrapper input[type="submit"] {
   border-radius: 6px;
   background: linear-gradient(145deg, #1e2024, #23272b);
   box-shadow: var(--shadow-1);
@@ -1468,6 +1468,26 @@ footer .headline .divider {
   font-weight: 500;
   border: 0 none;
   color: var(--color-primary);
+  cursor: pointer;
+  width: 100%;
+  height: 55px;
+  padding: 0 15px;
+  letter-spacing: 1px;
+  font-family: var(--montserrat);
+}
+
+.login-form-wrapper .google-login {
+  border-radius: 6px;
+  box-shadow: var(--shadow-1);
+  transition: 0.4s;
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  background: #fff !important;
+  color: #000 !important;
+  font-weight: bold;
+  border: 0 none;
+
   cursor: pointer;
   width: 100%;
   height: 55px;
@@ -2079,6 +2099,17 @@ footer .headline .divider {
   margin: 10px 0 25px 0;
 }
 
+@media only screen and (max-width: 884px) {
+  .blog-details {
+    flex: none;
+  }
+
+  .blog-details .left {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
 /* ===== Mix Tape Single Page ===== */
 .smt {
   margin-top: 130px;
@@ -2192,11 +2223,33 @@ footer .headline .divider {
   justify-content: space-around;
 }
 .events-date {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 20px 0;
 }
+.events-date-box {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: start;
+}
+.events-date-box-location {
+  display: flex;
+  justify-content: start;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.events-date-box div {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.events-date-end,
+.events-date-end {
+  margin-top: 10px;
+}
+
 .event .event-date h4 {
   color: var(--color-primary);
 }
@@ -2270,13 +2323,16 @@ footer .headline .divider {
   padding: 20px;
   border-radius: 10px;
   line-height: 1.7;
-  font-family: var(--montserrat);
-  font-size: 16px;
-  color: var(--color-lighten);
+
   background: var(--background-color-1);
   box-shadow: var(--shadow-1);
 }
 
+.smt-description p {
+  /* font-family: var(--montserrat) !important; */
+  font-size: 16px !important;
+  color: var(--color-lighten) !important;
+}
 .curriculum-title {
   font-size: 30px;
   color: var(--color-lighten);
@@ -2347,7 +2403,7 @@ footer .headline .divider {
   position: relative;
   /* margin-top: 111px; */
   padding-top: 35vh;
-  background: url(./Assets/images/news/news-bg.jpg);
+  background: url(./Assets/images/news/news-bg.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -3367,4 +3423,63 @@ footer .headline .divider {
     var(--color-primary),
     var(--color-primary)
   ) !important;
+}
+
+/* contact pages start here  */
+.contact_pages_card_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  grid-gap: 1rem;
+}
+.contact_pages_card {
+  background: linear-gradient(145deg, #1e2024, #23272b);
+  box-shadow: var(--shadow-1);
+  width: 280px;
+  margin: auto;
+  text-align: center;
+  border-radius: 1rem;
+  font-family: var(--montserrat);
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.contact_pages_card div {
+  background-color: var(--color-primary);
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.contact_pages_card div i {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.contact_pages_card p a {
+  font-size: 14px;
+  color: #f1f1f1;
+  transition: 0.4s;
+}
+
+.contact_pages_card p a:hover {
+  color: var(--color-primary);
+}
+
+@media only screen and (max-width: 1200px) {
+  .contact_pages_card_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact_pages_card_container {
+    grid-gap: 2rem 1rem;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .contact_pages_card_container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
